@@ -16,9 +16,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     var selectedPlanet = Int()
     var selectedPlanetDiffuse = UIImage(named: "")
     
-    @IBAction func dismissButton(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true)
-    }
     @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
@@ -53,6 +50,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         button.setTitle("Back", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
+        let cameraButton = UIButton(frame: CGRect())
+        
         self.view.addSubview(button)
         
     }
@@ -64,6 +63,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        ARSCNView.
         if ARWorldTrackingConfiguration.isSupported {
         
         // Create a session configuration

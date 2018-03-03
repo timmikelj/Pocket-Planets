@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E07F5A1B2042F510005BD0F2 /* planetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07F5A1A2042F510005BD0F2 /* planetData.swift */; };
+		E0817C6D204ADA74003CD245 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0817C6C204ADA74003CD245 /* CameraHandler.swift */; };
 		E098F8A2202F4F0A0013B6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */; };
 		E098F8A4202F4F0A0013B6FF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E098F8A3202F4F0A0013B6FF /* art.scnassets */; };
 		E098F8A6202F4F0A0013B6FF /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F8A5202F4F0A0013B6FF /* ARViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		E07F5A1A2042F510005BD0F2 /* planetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planetData.swift; sourceTree = "<group>"; };
+		E0817C6C204ADA74003CD245 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		E098F89E202F4F0A0013B6FF /* Pocket Planets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Planets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E098F8A3202F4F0A0013B6FF /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				E07F5A1A2042F510005BD0F2 /* planetData.swift */,
+				E0817C6C204ADA74003CD245 /* CameraHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				E0D52059203C110800083B6B /* WelcomeTableViewCell.swift in Sources */,
 				E098F8A6202F4F0A0013B6FF /* ARViewController.swift in Sources */,
 				E098F8A2202F4F0A0013B6FF /* AppDelegate.swift in Sources */,
+				E0817C6D204ADA74003CD245 /* CameraHandler.swift in Sources */,
 				E07F5A1B2042F510005BD0F2 /* planetData.swift in Sources */,
 				E0D52056203C0FCD00083B6B /* WelcomeTableViewController.swift in Sources */,
 			);
