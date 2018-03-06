@@ -20,6 +20,19 @@
 		E0D5205A203C110800083B6B /* WelcomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D52058203C110800083B6B /* WelcomeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E0504D77204D99DA00208D7B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E07F5A1A2042F510005BD0F2 /* planetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planetData.swift; sourceTree = "<group>"; };
 		E0817C6C204ADA74003CD245 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
@@ -116,6 +129,7 @@
 				E098F89A202F4F0A0013B6FF /* Sources */,
 				E098F89B202F4F0A0013B6FF /* Frameworks */,
 				E098F89C202F4F0A0013B6FF /* Resources */,
+				E0504D77204D99DA00208D7B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,6 +338,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43HPDBHL29;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Pocket Planets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -340,6 +358,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43HPDBHL29;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Pocket Planets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

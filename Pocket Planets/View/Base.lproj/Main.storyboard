@@ -5,13 +5,14 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Welcome Table View Controller-->
         <scene sceneID="Zf1-Bc-e46">
             <objects>
-                <tableViewController id="6kk-ZA-ywz" customClass="WelcomeTableViewController" customModule="AR_Planets" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="6kk-ZA-ywz" customClass="WelcomeTableViewController" customModule="Pocket_Planets" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hA4-Me-JvK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,18 +35,41 @@
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ARViewController" customModule="AR_Planets" customModuleProvider="target" sceneMemberID="viewController">
-                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" allowsCameraControl="YES" id="BrB-h1-WRS">
+                <viewController id="BV1-FR-VrT" customClass="ARViewController" customModule="Pocket_Planets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wwI-3R-EHZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </arscnView>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdS-ko-60x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RS5-fa-wjC">
+                                <rect key="frame" x="285" y="547" width="75" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Q4b-Gd-5bN"/>
+                                    <constraint firstAttribute="height" constant="100" id="f9r-Ia-h6P"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xdS-ko-60x" firstAttribute="leading" secondItem="Wow-Zs-Psm" secondAttribute="leading" id="1OP-5q-alT"/>
+                            <constraint firstItem="xdS-ko-60x" firstAttribute="bottom" secondItem="Wow-Zs-Psm" secondAttribute="bottom" id="IOS-9r-oFU"/>
+                            <constraint firstItem="Wow-Zs-Psm" firstAttribute="trailing" secondItem="RS5-fa-wjC" secondAttribute="trailing" constant="15" id="RSP-sh-teR"/>
+                            <constraint firstItem="Wow-Zs-Psm" firstAttribute="bottom" secondItem="RS5-fa-wjC" secondAttribute="bottom" constant="20" id="YBC-KY-ixF"/>
+                            <constraint firstItem="xdS-ko-60x" firstAttribute="top" secondItem="wwI-3R-EHZ" secondAttribute="top" id="ei2-dX-jdz"/>
+                            <constraint firstItem="xdS-ko-60x" firstAttribute="trailing" secondItem="Wow-Zs-Psm" secondAttribute="trailing" id="lJy-ga-Tcl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wow-Zs-Psm"/>
+                    </view>
                     <connections>
-                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="ARView" destination="xdS-ko-60x" id="JOr-lz-eEh"/>
+                        <outlet property="imageInTheView" destination="RS5-fa-wjC" id="EZX-Wf-imF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="124"/>
+            <point key="canvasLocation" x="-570.39999999999998" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>

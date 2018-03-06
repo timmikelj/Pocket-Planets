@@ -15,14 +15,25 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     let planetData = PlanetData()
     var selectedPlanet = Int()
     var selectedPlanetDiffuse = UIImage(named: "")
+//    var ARView = ARSCNView()
     
-    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var ARView: ARSCNView!
+    
+    @IBOutlet weak var imageInTheView: UIImageView!
+ //   @IBOutlet weak var cameraButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let screenSize: CGRect = UIScreen.main.bounds
+//        ARView = ARSCNView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height))
+//        self.view.addSubview(ARView)
+        
+        imageInTheView.isHidden = true
+        
         // Set the view's delegate
-        sceneView.delegate = self
+        ARView.delegate = self
         
         // Create GEOMETRY
         let marsSphere = SCNSphere(radius: 0.15)
@@ -40,19 +51,26 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         node.geometry = marsSphere
         
         // Add node into my scene
-        sceneView.scene.rootNode.addChildNode(node)
+        ARView.scene.rootNode.addChildNode(node)
         
         // Add realistic light
-        sceneView.autoenablesDefaultLighting = true
+        ARView.autoenablesDefaultLighting = true
         
         // Add back button
         let button = UIButton(frame: CGRect(x: 20, y: 10, width: 50, height: 50))
         button.setTitle("Back", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
-        let cameraButton = UIButton(frame: CGRect())
-        
         self.view.addSubview(button)
+        
+        // Add cameraButton
+        let cameraButton = UIButton(frame: CGRect(x: screenSize.width/2 - 40, y: screenSize.height - 90, width: 80, height: 80))
+        cameraButton.setImage(UIImage(named: "button static"), for: .normal)
+        cameraButton.alpha = 0.9
+        cameraButton.layer.cornerRadius = 45
+        cameraButton.addTarget(self, action: #selector(cameraAction), for: .touchUpInside)
+        cameraButton.setTitleColor(UIColor.green, for: UIControlState.selected)
+        self.view.addSubview(cameraButton)
         
     }
     
@@ -60,22 +78,33 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         self.dismiss(animated: true)
     }
     
+    @objc func cameraAction(sender: UIButton!) {
+        sender.setImage(UIImage(named: "button pressed"), for: .normal)
+        let image = ARView.snapshot()
+        print("Image taken")
+        print("\(image)")
+        imageInTheView.isHidden = false
+        imageInTheView.image = image
+        sender.setImage(UIImage(named: "button static"), for: .normal)
+    }
+    
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        ARSCNView.
         if ARWorldTrackingConfiguration.isSupported {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
 
         // Run the view's session
-        sceneView.session.run(configuration)
+        ARView.session.run(configuration)
             
         } else {
             print("Realistic AR experience is not available on this device.")
         }
-        
         
     }
     
@@ -83,7 +112,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         super.viewWillDisappear(animated)
         
         // Pause the view's session
-        sceneView.session.pause()
+        ARView.session.pause()
     }
     
     override var prefersStatusBarHidden: Bool {
