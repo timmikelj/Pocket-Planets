@@ -49,10 +49,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Export AR Media</string>
+	<string>Pocket Planets needs access to your photo library to save captured images.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Export AR Media</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Audiovisual Recording</string>
+	<string>Pocket Planets needs access to your photo library to save captured images.</string>
 </dict>
 </plist>
