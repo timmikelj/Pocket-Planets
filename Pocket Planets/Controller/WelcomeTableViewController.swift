@@ -32,7 +32,7 @@ class WelcomeTableViewController: UITableViewController {
         return planetData.planetArray.count
     }
 
-
+    // MARK: - Set up cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! WelcomeTableViewCell
         
@@ -45,9 +45,7 @@ class WelcomeTableViewController: UITableViewController {
         return cell
     }
 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: - Segue Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showPlanet") {
             

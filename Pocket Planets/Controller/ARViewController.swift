@@ -16,20 +16,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     var selectedPlanet = Int()
     var selectedPlanetDiffuse = UIImage(named: "")
     var imagePicker: UIImagePickerController!
-//    var ARView = ARSCNView()
     
     @IBOutlet weak var ARView: ARSCNView!
     
     @IBOutlet weak var imageInTheView: UIImageView!
- //   @IBOutlet weak var cameraButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let screenSize: CGRect = UIScreen.main.bounds
-//        ARView = ARSCNView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height))
-//        self.view.addSubview(ARView)
         
         imageInTheView.isHidden = true
         
@@ -57,33 +50,13 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         // Add realistic light
         ARView.autoenablesDefaultLighting = true
         
-//        // Add back button
-//        let button = UIButton(frame: CGRect(x: 20, y: 10, width: 50, height: 50))
-//        button.setTitle("Back", for: .normal)
-//        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-//
-//        self.view.addSubview(button)
-        
-//        // Add cameraButton
-//        let cameraButton = UIButton(frame: CGRect(x: screenSize.width/2 - 40, y: screenSize.height - 90, width: 80, height: 80))
-//        cameraButton.setImage(UIImage(named: "button static"), for: .normal)
-//        cameraButton.alpha = 0.9
-//        cameraButton.layer.cornerRadius = 45
-//        cameraButton.addTarget(self, action: #selector(cameraAction), for: .touchUpInside)
-//        cameraButton.setTitleColor(UIColor.green, for: UIControlState.selected)
-//        self.view.addSubview(cameraButton)
-        
-    }
-    
-    @objc func buttonAction(sender: UIButton!) {
-        self.dismiss(animated: true)
     }
     
     @IBAction func dimissButton(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
-    
+    //MARK: - Camera Button
     @IBAction func cameraButton(_ sender: Any) {
         (sender as AnyObject).setImage(UIImage(named: "button pressed"), for: .selected)
         let image = ARView.snapshot()
@@ -120,25 +93,11 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         }
     }
     
-    //MARK: - Done image capture here
+    //MARK: - Done image capture
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         imagePicker.dismiss(animated: true, completion: nil)
         imageInTheView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
-    
-    
-//    @objc func cameraAction(sender: UIButton!) {
-//        sender.setImage(UIImage(named: "button pressed"), for: .selected)
-//        let image = ARView.snapshot()
-//        print("Image taken")
-//        print("\(image)")
-//        imageInTheView.isHidden = false
-//        imageInTheView.image = image
-//        sender.setImage(UIImage(named: "button static"), for: .normal)
-//    }
-    
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
