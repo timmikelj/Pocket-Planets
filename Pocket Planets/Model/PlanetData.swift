@@ -10,22 +10,66 @@ import UIKit
 
 class PlanetData {
 
-    static let planetArray = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
-    static let planetPatternArray = ["mercury.jpg", "venus.jpg", "earth_day.jpg", "mars.jpg", "jupiter.jpg", "saturn.jpg", "uranus.jpg", "neptune.jpg"]
-
-    let planetImagesArray : [UIImage] = [
-        UIImage(named: "mercury")!,
-        UIImage(named: "venus")!,
-        UIImage(named: "earth")!,
-        UIImage(named: "mars")!,
-        UIImage(named: "jupiter")!,
-        UIImage(named: "saturn")!,
-        UIImage(named: "uranus")!,
-        UIImage(named: "neptune")!
+//    static let planetPatternArray = ["mercury.jpg", "venus.jpg", "earth_day.jpg", "mars.jpg", "jupiter.jpg", "saturn.jpg", "uranus.jpg", "neptune.jpg"]
+    
+    static let planets: [Planet] = [
+        
+        Planet(name: "Mercury",
+               distanceFromSun: 58,
+               diameterInKm: 3031,
+               type: .free,
+               image: UIImage(named: "mercury") ?? UIImage(),
+               patternImageName: "mercury.jpg"),
+        
+        Planet(name: "Venus",
+               distanceFromSun: 67,
+               diameterInKm: 7521,
+               type: .free,
+               image: UIImage(named: "venus") ?? UIImage(),
+               patternImageName: "venus.jpg"),
+        
+        Planet(name: "Earth",
+               distanceFromSun: 93,
+               diameterInKm: 7926,
+               type: .free,
+               image: UIImage(named: "earth") ?? UIImage(),
+               patternImageName: "earth_day.jpg"),
+        
+        Planet(name: "Mars",
+               distanceFromSun: 142,
+               diameterInKm: 4222,
+               type: .fullAccess,
+               image: UIImage(named: "mars") ?? UIImage(),
+               patternImageName: "mars.jpg"),
+        
+        Planet(name: "Jupiter",
+               distanceFromSun: 484,
+               diameterInKm: 88846,
+               type: .fullAccess,
+               image: UIImage(named: "jupiter") ?? UIImage(),
+               patternImageName: "jupiter.jpg"),
+        
+        Planet(name: "Saturn",
+               distanceFromSun: 887,
+               diameterInKm: 74900,
+               type: .fullAccess,
+               image: UIImage(named: "saturn") ?? UIImage(),
+               patternImageName: "saturn.jpg"),
+        
+        Planet(name: "Uranus",
+               distanceFromSun: 1784,
+               diameterInKm: 31763,
+               type: .fullAccess,
+               image: UIImage(named: "uranus") ?? UIImage(),
+               patternImageName: "uranus.jpg"),
+        
+        Planet(name: "Neptune",
+               distanceFromSun: 2794,
+               diameterInKm: 30779,
+               type: .fullAccess,
+               image: UIImage(named: "neptune") ?? UIImage(),
+               patternImageName: "neptune.jpg")
+        
     ]
-
-    let distanceFromSun : [Int] = [58, 67, 93, 142, 484, 887, 1784, 2794]
-
-    let diameterInKm : [String] = ["3,031", "7,521", "7,926", "4,222", "88,846", "74,900", "31,763", "30,779"]
 
 }

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InAppPurchaseViewController" customModule="Pocket_Planets" customModuleProvider="target">
+            <connections>
+                <outlet property="inAppPurchasesTitleLabel" destination="GA6-5c-kMf" id="EAk-Kn-yyT"/>
+                <outlet property="tableView" destination="JMC-0C-KQA" id="RQk-vP-bfB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6u-CI-RS1">
+                    <rect key="frame" x="100" y="549" width="175" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="2BA-0Q-ge5"/>
+                    </constraints>
+                    <state key="normal" title="Purchase Full Access">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="purchaseFullAccess:" destination="-1" eventType="touchUpInside" id="lBc-H1-Srl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zby-Kg-tzh">
+                    <rect key="frame" x="100" y="613" width="175" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Jch-sm-1Rg"/>
+                    </constraints>
+                    <state key="normal" title="Restore Purchase">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="restoreFullAccess:" destination="-1" eventType="touchUpInside" id="4nG-K1-Cb7"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JMC-0C-KQA">
+                    <rect key="frame" x="0.0" y="100" width="375" height="429"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See More Planets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA6-5c-kMf">
+                    <rect key="frame" x="20" y="50" width="335" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="4fC-tD-xAM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zby-Kg-tzh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="0Js-ai-AGw"/>
+                <constraint firstItem="zby-Kg-tzh" firstAttribute="top" secondItem="M6u-CI-RS1" secondAttribute="bottom" constant="24" id="2Gz-P9-uqG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zby-Kg-tzh" secondAttribute="trailing" constant="100" id="58d-Kw-9p5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GA6-5c-kMf" secondAttribute="trailing" constant="20" id="Lkq-dw-YsD"/>
+                <constraint firstItem="JMC-0C-KQA" firstAttribute="top" secondItem="GA6-5c-kMf" secondAttribute="bottom" constant="20" id="M0V-33-Ivb"/>
+                <constraint firstItem="GA6-5c-kMf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="SFx-Sd-yn7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zby-Kg-tzh" secondAttribute="bottom" constant="24" id="SOr-5y-8Jx"/>
+                <constraint firstItem="JMC-0C-KQA" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Up7-eA-oob"/>
+                <constraint firstItem="GA6-5c-kMf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bpi-La-1OD"/>
+                <constraint firstItem="M6u-CI-RS1" firstAttribute="top" secondItem="JMC-0C-KQA" secondAttribute="bottom" constant="20" id="ckH-PQ-NNt"/>
+                <constraint firstItem="M6u-CI-RS1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="mzQ-NT-7Xt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M6u-CI-RS1" secondAttribute="trailing" constant="100" id="nT7-ja-e5o"/>
+                <constraint firstItem="JMC-0C-KQA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pFV-17-Pjq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="136.80000000000001" y="126.38680659670166"/>
+        </view>
+    </objects>
+</document>

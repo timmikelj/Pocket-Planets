@@ -27,7 +27,6 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="planetTableView" destination="hA4-Me-JvK" id="ggj-Mf-n86"/>
-                        <segue destination="BV1-FR-VrT" kind="show" identifier="showPlanet" animates="NO" id="NI3-IU-W1t"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18l-6k-CSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -55,33 +54,22 @@
                                             <constraint firstAttribute="width" constant="75" id="Y5J-2O-Zcw"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button pressed" translatesAutoresizingMaskIntoConstraints="NO" id="waI-4z-rPK">
-                                        <rect key="frame" x="145" y="23" width="85" height="85"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="85" id="GOT-iv-W1i"/>
-                                            <constraint firstAttribute="height" constant="85" id="pND-2Y-gj1"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pua-uv-YPl">
                                         <rect key="frame" x="153" y="31" width="69" height="69"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="69" id="GnI-ug-hqY"/>
                                             <constraint firstAttribute="height" constant="69" id="rsl-dI-g5o"/>
                                         </constraints>
-                                        <state key="normal" image="button middle"/>
                                         <connections>
-                                            <action selector="cameraButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="fUw-8w-zqC"/>
+                                            <action selector="cameraButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="bz4-MW-lzu"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="RS5-fa-wjC" secondAttribute="trailing" constant="20" id="0Cg-ag-Uwv"/>
-                                    <constraint firstAttribute="bottom" secondItem="waI-4z-rPK" secondAttribute="bottom" constant="5" id="0uZ-aV-lDK"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Pua-uv-YPl" secondAttribute="trailing" constant="167" id="Gcl-Wg-jYn"/>
                                     <constraint firstItem="Pua-uv-YPl" firstAttribute="centerX" secondItem="Nsa-ou-e5E" secondAttribute="centerX" priority="999" id="NcA-GI-dLz"/>
                                     <constraint firstAttribute="bottom" secondItem="RS5-fa-wjC" secondAttribute="bottom" constant="5" id="X01-nf-Srd"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="waI-4z-rPK" secondAttribute="trailing" constant="159" id="cf5-U6-s9q"/>
-                                    <constraint firstItem="waI-4z-rPK" firstAttribute="centerX" secondItem="Nsa-ou-e5E" secondAttribute="centerX" priority="999" id="kLE-2b-anP"/>
                                     <constraint firstAttribute="bottom" secondItem="Pua-uv-YPl" secondAttribute="bottom" constant="13" id="qRq-NA-eVc"/>
                                     <constraint firstAttribute="height" constant="113" id="t1w-KG-f3r"/>
                                 </constraints>
@@ -122,6 +110,7 @@
                     </view>
                     <connections>
                         <outlet property="ARView" destination="xdS-ko-60x" id="JOr-lz-eEh"/>
+                        <outlet property="cameraButton" destination="Pua-uv-YPl" id="bR7-LB-Z6R"/>
                         <outlet property="imageInTheView" destination="RS5-fa-wjC" id="EZX-Wf-imF"/>
                     </connections>
                 </viewController>
@@ -150,7 +139,5 @@
     </scenes>
     <resources>
         <image name="back button" width="30" height="53"/>
-        <image name="button middle" width="154" height="154"/>
-        <image name="button pressed" width="194" height="194"/>
     </resources>
 </document>

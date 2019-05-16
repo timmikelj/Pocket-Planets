@@ -9,3 +9,5 @@
 import UIKit
 
 let ppAlertTintColor: UIColor = .black
+let cameraButtonName = "button static"
+let cameraButtonSelectedName = "button pressed"
