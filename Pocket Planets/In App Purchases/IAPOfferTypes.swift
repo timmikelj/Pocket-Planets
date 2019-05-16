@@ -10,7 +10,7 @@ import Foundation
 
 enum IAPOfferType: String, CaseIterable {
     
-    case free = "Included for Free"
-    case fullAccess = "With Full Access"
+    case free = "Included With Free Access"
+    case fullAccess = "When You Purchase Full Access"
     
 }

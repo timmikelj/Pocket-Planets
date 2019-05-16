@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InAppPurchaseViewController" customModule="Pocket_Planets" customModuleProvider="target">
             <connections>
-                <outlet property="inAppPurchasesTitleLabel" destination="GA6-5c-kMf" id="EAk-Kn-yyT"/>
+                <outlet property="priceLabel" destination="blC-o8-LhH" id="5m1-xI-teu"/>
                 <outlet property="purchaseFullAccessButton" destination="M6u-CI-RS1" id="Sej-Wg-DpS"/>
                 <outlet property="restorePurchaseButton" destination="zby-Kg-tzh" id="QRO-dV-eoV"/>
                 <outlet property="tableView" destination="JMC-0C-KQA" id="RQk-vP-bfB"/>
@@ -42,7 +42,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Jch-sm-1Rg"/>
                     </constraints>
-                    <state key="normal" title="Restore Purchase">
+                    <state key="normal" title="Restore Full Access">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -50,15 +50,12 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JMC-0C-KQA">
-                    <rect key="frame" x="0.0" y="100" width="375" height="429"/>
+                    <rect key="frame" x="0.0" y="50" width="375" height="471"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See More Planets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA6-5c-kMf">
-                    <rect key="frame" x="20" y="50" width="335" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="4fC-tD-xAM"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blC-o8-LhH">
+                    <rect key="frame" x="20" y="541" width="335" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -68,16 +65,16 @@
                 <constraint firstItem="zby-Kg-tzh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="0Js-ai-AGw"/>
                 <constraint firstItem="zby-Kg-tzh" firstAttribute="top" secondItem="M6u-CI-RS1" secondAttribute="bottom" constant="24" id="2Gz-P9-uqG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zby-Kg-tzh" secondAttribute="trailing" constant="100" id="58d-Kw-9p5"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GA6-5c-kMf" secondAttribute="trailing" constant="20" id="Lkq-dw-YsD"/>
-                <constraint firstItem="JMC-0C-KQA" firstAttribute="top" secondItem="GA6-5c-kMf" secondAttribute="bottom" constant="20" id="M0V-33-Ivb"/>
-                <constraint firstItem="GA6-5c-kMf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="SFx-Sd-yn7"/>
+                <constraint firstItem="blC-o8-LhH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LE9-WU-dTg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="zby-Kg-tzh" secondAttribute="bottom" constant="24" id="SOr-5y-8Jx"/>
                 <constraint firstItem="JMC-0C-KQA" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Up7-eA-oob"/>
-                <constraint firstItem="GA6-5c-kMf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="bpi-La-1OD"/>
-                <constraint firstItem="M6u-CI-RS1" firstAttribute="top" secondItem="JMC-0C-KQA" secondAttribute="bottom" constant="20" id="ckH-PQ-NNt"/>
+                <constraint firstItem="blC-o8-LhH" firstAttribute="top" secondItem="JMC-0C-KQA" secondAttribute="bottom" constant="20" id="cib-5I-Ldu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="blC-o8-LhH" secondAttribute="trailing" constant="20" id="fmQ-Qm-zPS"/>
                 <constraint firstItem="M6u-CI-RS1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="mzQ-NT-7Xt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M6u-CI-RS1" secondAttribute="trailing" constant="100" id="nT7-ja-e5o"/>
                 <constraint firstItem="JMC-0C-KQA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pFV-17-Pjq"/>
+                <constraint firstItem="JMC-0C-KQA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="pJn-PN-btY"/>
+                <constraint firstItem="M6u-CI-RS1" firstAttribute="top" secondItem="blC-o8-LhH" secondAttribute="bottom" constant="8" id="vfY-cj-UIz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="136.80000000000001" y="126.38680659670166"/>

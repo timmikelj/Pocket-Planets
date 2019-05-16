@@ -8,23 +8,23 @@
 
 import UIKit
 
-private let tableViewHeaderHeight: CGFloat = 40
-
-
+private let tableViewHeaderHeight: CGFloat = 50
 
 class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     static let identifier = "InAppPurchaseViewController"
 
-    @IBOutlet var inAppPurchasesTitleLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var purchaseFullAccessButton: UIButton!
     @IBOutlet var restorePurchaseButton: UIButton!
+    @IBOutlet var priceLabel: UILabel!
     
     private let offerList = OfferList()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        purchaseFullAccessButton.isEnabled = false
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -32,6 +32,14 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.register(UINib(nibName: IAPTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: IAPTableViewCell.identifier)
         
         purchaseFullAccessButton.layer.cornerRadius = 8
+        
+        InAppPurchaseBrain.shared.fetchInAppPurchases()
+        
+        InAppPurchaseBrain.shared.IAPLoaded = { success in
+            
+            if success { self.loadIAPPrice() }
+            
+        }
     
     }
     
@@ -55,6 +63,15 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return tableViewHeaderHeight
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.contentView.backgroundColor = ppNavigationControllerBackgroundColor
+            headerView.textLabel?.textColor = ppNavigationControllerTextColor
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -90,10 +107,29 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func purchaseFullAccess(_ sender: UIButton) {
-        
+        InAppPurchaseBrain.shared.purchase(productID: InAppPurchaseBrain.shared.iap_id)
     }
     
     @IBAction func restoreFullAccess(_ sender: UIButton) {
+        InAppPurchaseBrain.shared.restorePurchases()
+    }
+    
+    
+    private func loadIAPPrice() {
+        
+        for product in InAppPurchaseBrain.shared.products {
+            
+            if product.key == InAppPurchaseBrain.shared.iap_id {
+                
+                if let currency = product.value.priceLocale.currencyCode {
+                    
+                    self.priceLabel.text = "\(product.value.price) \(currency)"
+                    purchaseFullAccessButton.isEnabled = true
+                    
+                }
+            }
+        }
         
     }
+    
 }

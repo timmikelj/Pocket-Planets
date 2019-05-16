@@ -19,7 +19,7 @@ class InAppPurchaseBrain: NSObject {
     
     let iap_id = "pocket_planets_full_access"
     var products: [String: SKProduct] = [:]
-    var productsLoaded: ((_ completed: Bool) -> Void)? = nil
+    var IAPLoaded: ((_ completed: Bool) -> Void)? = nil
     
     func fetchInAppPurchases() {
         let productIDs = Set([iap_id])
@@ -29,9 +29,13 @@ class InAppPurchaseBrain: NSObject {
     }
     
     func purchase(productID: String) {
-        if let product = products[productID] {
-            let payment = SKPayment(product: product)
-            SKPaymentQueue.default().add(payment)
+        
+        if SKPaymentQueue.canMakePayments() {
+            
+            if let product = products[productID] {
+                let payment = SKPayment(product: product)
+                SKPaymentQueue.default().add(payment)
+            }
         }
     }
     
@@ -55,7 +59,7 @@ extension InAppPurchaseBrain: SKProductsRequestDelegate, SKPaymentTransactionObs
             products[product.productIdentifier] = product
         }
         
-        productsLoaded!(true)
+        IAPLoaded!(true)
     }
     
     func request(_ request: SKRequest, didFailWithError error: Error) {
@@ -79,6 +83,7 @@ extension InAppPurchaseBrain: SKProductsRequestDelegate, SKPaymentTransactionObs
                     
                 case .restored:
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    
                     showRestoredMessage()
                     break
                     
