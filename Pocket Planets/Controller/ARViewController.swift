@@ -12,6 +12,8 @@ import ARKit
 
 class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    static let identifier = "ARViewController"
+    
     let planetData = PlanetData()
     var selectedPlanet = Int()
     var selectedPlanetDiffuse = UIImage(named: "")
@@ -34,7 +36,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         
         // Create Material & assign it to my object
         let material = SCNMaterial()
-        let assetLink = "art.scnassets/\(planetData.planetPatternArray[selectedPlanet])"
+        let assetLink = "art.scnassets/\(PlanetData.planetPatternArray[selectedPlanet])"
         selectedPlanetDiffuse = UIImage(named: assetLink)
         material.diffuse.contents = selectedPlanetDiffuse
         marsSphere.materials = [material]
@@ -52,8 +54,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         
     }
     
+    override func viewDidLayoutSubviews() {
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     @IBAction func dimissButton(_ sender: Any) {
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     //MARK: - Camera Button

@@ -10,9 +10,8 @@ import UIKit
 
 class PlanetData {
 
-    let planetArray = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
-
-    let planetPatternArray = ["mercury.jpg", "venus.jpg", "earth_day.jpg", "mars.jpg", "jupiter.jpg", "saturn.jpg", "uranus.jpg", "neptune.jpg"]
+    static let planetArray = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+    static let planetPatternArray = ["mercury.jpg", "venus.jpg", "earth_day.jpg", "mars.jpg", "jupiter.jpg", "saturn.jpg", "uranus.jpg", "neptune.jpg"]
 
     let planetImagesArray : [UIImage] = [
         UIImage(named: "mercury")!,

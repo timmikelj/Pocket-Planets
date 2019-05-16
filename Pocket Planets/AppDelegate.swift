@@ -13,9 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        restoreIAP()
         return true
     }
 
@@ -34,6 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
     }
 
+    
+    func restoreIAP() {
+        InAppPurchaseBrain.shared.restorePurchases()
+    }
 
 }
 

@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E07F5A1B2042F510005BD0F2 /* planetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07F5A1A2042F510005BD0F2 /* planetData.swift */; };
+		E07F5A1B2042F510005BD0F2 /* PlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07F5A1A2042F510005BD0F2 /* PlanetData.swift */; };
 		E098F8A2202F4F0A0013B6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */; };
 		E098F8A4202F4F0A0013B6FF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E098F8A3202F4F0A0013B6FF /* art.scnassets */; };
 		E098F8A6202F4F0A0013B6FF /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F8A5202F4F0A0013B6FF /* ARViewController.swift */; };
 		E098F8A9202F4F0A0013B6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F8A7202F4F0A0013B6FF /* Main.storyboard */; };
 		E098F8AB202F4F0A0013B6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E098F8AA202F4F0A0013B6FF /* Assets.xcassets */; };
 		E098F8AE202F4F0A0013B6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */; };
-		E0D52056203C0FCD00083B6B /* WelcomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D52055203C0FCD00083B6B /* WelcomeTableViewController.swift */; };
+		E0B2464F228D725600BF9CBD /* InAppPurchaseBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2464E228D725600BF9CBD /* InAppPurchaseBrain.swift */; };
+		E0B24652228D72D000BF9CBD /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B24651228D72D000BF9CBD /* UIApplication+Extensions.swift */; };
+		E0B24654228D731800BF9CBD /* Alert+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B24653228D731800BF9CBD /* Alert+Extensions.swift */; };
+		E0B24657228D734F00BF9CBD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B24656228D734F00BF9CBD /* Constants.swift */; };
+		E0B24659228D755B00BF9CBD /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B24658228D755B00BF9CBD /* UserDefaults.swift */; };
+		E0D52056203C0FCD00083B6B /* PlanetListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D52055203C0FCD00083B6B /* PlanetListTableViewController.swift */; };
 		E0D52059203C110800083B6B /* WelcomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D52057203C110800083B6B /* WelcomeTableViewCell.swift */; };
 		E0D5205A203C110800083B6B /* WelcomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D52058203C110800083B6B /* WelcomeTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -33,7 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E07F5A1A2042F510005BD0F2 /* planetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planetData.swift; sourceTree = "<group>"; };
+		E07F5A1A2042F510005BD0F2 /* PlanetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetData.swift; sourceTree = "<group>"; };
 		E098F89E202F4F0A0013B6FF /* Pocket Planets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Planets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E098F8A3202F4F0A0013B6FF /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -42,7 +47,12 @@
 		E098F8AA202F4F0A0013B6FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E098F8AD202F4F0A0013B6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E098F8AF202F4F0A0013B6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0D52055203C0FCD00083B6B /* WelcomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTableViewController.swift; sourceTree = "<group>"; };
+		E0B2464E228D725600BF9CBD /* InAppPurchaseBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseBrain.swift; sourceTree = "<group>"; };
+		E0B24651228D72D000BF9CBD /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		E0B24653228D731800BF9CBD /* Alert+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extensions.swift"; sourceTree = "<group>"; };
+		E0B24656228D734F00BF9CBD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E0B24658228D755B00BF9CBD /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		E0D52055203C0FCD00083B6B /* PlanetListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListTableViewController.swift; sourceTree = "<group>"; };
 		E0D52057203C110800083B6B /* WelcomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTableViewCell.swift; sourceTree = "<group>"; };
 		E0D52058203C110800083B6B /* WelcomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,7 +71,8 @@
 		E07F5A1C2042F6DA005BD0F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E07F5A1A2042F510005BD0F2 /* planetData.swift */,
+				E07F5A1A2042F510005BD0F2 /* PlanetData.swift */,
+				E0B2464E228D725600BF9CBD /* InAppPurchaseBrain.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -69,6 +80,7 @@
 		E07F5A1D2042F6E1005BD0F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E0D52057203C110800083B6B /* WelcomeTableViewCell.swift */,
 				E0D52058203C110800083B6B /* WelcomeTableViewCell.xib */,
 				E098F8A7202F4F0A0013B6FF /* Main.storyboard */,
 				E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */,
@@ -79,10 +91,8 @@
 		E07F5A1E2042F6EB005BD0F2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */,
 				E098F8A5202F4F0A0013B6FF /* ARViewController.swift */,
-				E0D52055203C0FCD00083B6B /* WelcomeTableViewController.swift */,
-				E0D52057203C110800083B6B /* WelcomeTableViewCell.swift */,
+				E0D52055203C0FCD00083B6B /* PlanetListTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -106,14 +116,35 @@
 		E098F8A0202F4F0A0013B6FF /* Pocket Planets */ = {
 			isa = PBXGroup;
 			children = (
+				E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */,
 				E07F5A1C2042F6DA005BD0F2 /* Model */,
 				E07F5A1D2042F6E1005BD0F2 /* View */,
 				E07F5A1E2042F6EB005BD0F2 /* Controller */,
+				E0B24650228D72B700BF9CBD /* Extensions */,
+				E0B24655228D734100BF9CBD /* Helpers */,
 				E098F8A3202F4F0A0013B6FF /* art.scnassets */,
 				E098F8AA202F4F0A0013B6FF /* Assets.xcassets */,
 				E098F8AF202F4F0A0013B6FF /* Info.plist */,
 			);
 			path = "Pocket Planets";
+			sourceTree = "<group>";
+		};
+		E0B24650228D72B700BF9CBD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E0B24651228D72D000BF9CBD /* UIApplication+Extensions.swift */,
+				E0B24653228D731800BF9CBD /* Alert+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E0B24655228D734100BF9CBD /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E0B24656228D734F00BF9CBD /* Constants.swift */,
+				E0B24658228D755B00BF9CBD /* UserDefaults.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,11 +222,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B24652228D72D000BF9CBD /* UIApplication+Extensions.swift in Sources */,
 				E0D52059203C110800083B6B /* WelcomeTableViewCell.swift in Sources */,
 				E098F8A6202F4F0A0013B6FF /* ARViewController.swift in Sources */,
 				E098F8A2202F4F0A0013B6FF /* AppDelegate.swift in Sources */,
-				E07F5A1B2042F510005BD0F2 /* planetData.swift in Sources */,
-				E0D52056203C0FCD00083B6B /* WelcomeTableViewController.swift in Sources */,
+				E0B24654228D731800BF9CBD /* Alert+Extensions.swift in Sources */,
+				E07F5A1B2042F510005BD0F2 /* PlanetData.swift in Sources */,
+				E0B24659228D755B00BF9CBD /* UserDefaults.swift in Sources */,
+				E0B2464F228D725600BF9CBD /* InAppPurchaseBrain.swift in Sources */,
+				E0D52056203C0FCD00083B6B /* PlanetListTableViewController.swift in Sources */,
+				E0B24657228D734F00BF9CBD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

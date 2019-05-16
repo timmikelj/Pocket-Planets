@@ -14,11 +14,11 @@ class WelcomeTableViewCell: UITableViewCell {
     @IBOutlet weak var planetName: UILabel!
     @IBOutlet weak var planetSize: UILabel!
     @IBOutlet weak var planetDistanceFromSun: UILabel!
-    @IBOutlet weak var arrowLabel: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.accessoryType = .disclosureIndicator
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

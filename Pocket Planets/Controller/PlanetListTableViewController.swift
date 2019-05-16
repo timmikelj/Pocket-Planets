@@ -8,10 +8,10 @@
 
 import UIKit
 
-class WelcomeTableViewController: UITableViewController {
+class PlanetListTableViewController: UITableViewController {
 
     @IBOutlet var planetTableView: UITableView!
-    let planetData = PlanetData()
+    private let planetData = PlanetData()
     var globalSelectedIndex = Int()
     
     override func viewDidLoad() {
@@ -21,6 +21,10 @@ class WelcomeTableViewController: UITableViewController {
         planetTableView.register(UINib(nibName: "WelcomeTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,55 +33,37 @@ class WelcomeTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return planetData.planetArray.count
+        return PlanetData.planetArray.count
     }
 
     // MARK: - Set up cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! WelcomeTableViewCell
         
-        cell.arrowLabel.font = UIFont.systemFont(ofSize: 25.0)
-        cell.planetName.text = planetData.planetArray[indexPath.row]
+        cell.planetName.text = PlanetData.planetArray[indexPath.row]
         cell.planetImageView.image = planetData.planetImagesArray[indexPath.row]
         cell.planetSize.text = "Diameter: \(planetData.diameterInKm[indexPath.row]) miles"
         cell.planetDistanceFromSun.text = "Distance from Sun: \(planetData.distanceFromSun[indexPath.row]) million miles"
 
         return cell
     }
-
-    // MARK: - Segue Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showPlanet") {
-            
-            let destinationVC = segue.destination as! ARViewController
-            
-            let indexArray = planetTableView.indexPathForSelectedRow!
-            globalSelectedIndex = Int(indexArray[1])
-            
-            destinationVC.selectedPlanet = globalSelectedIndex
-            
-        }
-    }
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! WelcomeTableViewCell
-        cell.arrowLabel.font.withSize(40)
-        self.performSegue(withIdentifier: "showPlanet", sender: Any?.self)
+//        let cell = tableView.cellForRow(at: indexPath) as! WelcomeTableViewCell
+        
+        let arVC = storyboard?.instantiateViewController(withIdentifier: ARViewController.identifier) as! ARViewController
+        arVC.selectedPlanet = indexPath.row
+        self.show(arVC, sender: nil)
         
     }
     
     override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! WelcomeTableViewCell
-        cell.arrowLabel.font = UIFont.systemFont(ofSize: 40.0)
-        
-        
     }
     
     override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! WelcomeTableViewCell
-        cell.arrowLabel.font = UIFont.systemFont(ofSize: 25.0)
         cell.planetImageView.frame = CGRect(x: 0, y: 0, width: 115, height: 115)
     }
     
