@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum IAPOfferType: CaseIterable {
+enum IAPOfferType: String, CaseIterable {
     
-    case free
-    case fullAccess
+    case free = "Included for Free"
+    case fullAccess = "With Full Access"
     
 }

@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InAppPurchaseViewController" customModule="Pocket_Planets" customModuleProvider="target">
             <connections>
                 <outlet property="inAppPurchasesTitleLabel" destination="GA6-5c-kMf" id="EAk-Kn-yyT"/>
+                <outlet property="purchaseFullAccessButton" destination="M6u-CI-RS1" id="Sej-Wg-DpS"/>
+                <outlet property="restorePurchaseButton" destination="zby-Kg-tzh" id="QRO-dV-eoV"/>
                 <outlet property="tableView" destination="JMC-0C-KQA" id="RQk-vP-bfB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,7 +26,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6u-CI-RS1">
                     <rect key="frame" x="100" y="549" width="175" height="40"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="2BA-0Q-ge5"/>
                     </constraints>
@@ -41,7 +43,7 @@
                         <constraint firstAttribute="height" constant="30" id="Jch-sm-1Rg"/>
                     </constraints>
                     <state key="normal" title="Restore Purchase">
-                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
                         <action selector="restoreFullAccess:" destination="-1" eventType="touchUpInside" id="4nG-K1-Cb7"/>
@@ -51,7 +53,7 @@
                     <rect key="frame" x="0.0" y="100" width="375" height="429"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See More Planets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA6-5c-kMf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See More Planets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GA6-5c-kMf">
                     <rect key="frame" x="20" y="50" width="335" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="4fC-tD-xAM"/>

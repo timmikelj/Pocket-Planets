@@ -10,19 +10,45 @@ import Foundation
 
 class OfferList {
     
-    static let offers: [Offer] = [
+    private let offers: [Offer] = [
         
-        // free stuff
-        Offer(offerText: "", offerType: .free),
-        Offer(offerText: "", offerType: .free),
-        Offer(offerText: "", offerType: .free),
-        
-        // paid stuff
-        Offer(offerText: "", offerType: .fullAccess),
-        Offer(offerText: "", offerType: .fullAccess),
+        Offer(offerText: "See \(PlanetData.freePlanetNames()) in AR.", offerType: .free),
+        Offer(offerText: "All included in free", offerType: .fullAccess),
+        Offer(offerText: "See \(PlanetData.fullAccessPlanetNames()) in AR", offerType: .fullAccess),
+        Offer(offerText: "Take photos of planets in real world and save them to your photo library", offerType: .fullAccess)
     
     ]
     
     
+    func freeOffers() -> [Offer]? {
+        
+        var freeOffers = [Offer]()
+        
+        for offer in offers {
+            
+            if offer.offerType == IAPOfferType.free {
+                freeOffers.append(offer)
+            }
+            
+        }
+        
+        return freeOffers
+        
+    }
     
+    func fullAccessOffers() -> [Offer]? {
+        
+        var fullAccessOffers = [Offer]()
+        
+        for offer in offers {
+            
+            if offer.offerType == IAPOfferType.fullAccess {
+                fullAccessOffers.append(offer)
+            }
+            
+        }
+        
+        return fullAccessOffers
+        
+    }
 }

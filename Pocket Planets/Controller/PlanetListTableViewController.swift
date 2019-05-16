@@ -11,8 +11,6 @@ import UIKit
 class PlanetListTableViewController: UITableViewController {
 
     @IBOutlet var planetTableView: UITableView!
-//    private let planetData = PlanetData()
-    var globalSelectedIndex = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +25,12 @@ class PlanetListTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return PlanetData.planets.count
     }
 
-    // MARK: - Set up cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PlanetListTableViewCell.identifier, for: indexPath) as! PlanetListTableViewCell
         
@@ -47,9 +42,7 @@ class PlanetListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        let cell = tableView.cellForRow(at: indexPath) as! WelcomeTableViewCell
-        
+
         let arVC = storyboard?.instantiateViewController(withIdentifier: ARViewController.identifier) as! ARViewController
         arVC.selectedPlanetIndex = indexPath.row
         self.show(arVC, sender: nil)

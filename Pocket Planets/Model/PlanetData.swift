@@ -71,5 +71,64 @@ class PlanetData {
                patternImageName: "neptune.jpg")
         
     ]
+    
+    static func freePlanetNames() -> String {
+        
+        var names = String()
+        for planet in planets {
+            if planet.type == IAPOfferType.free {
+                
+                if !names.isEmpty { names.append(", ") }
+                names.append("\(planet.name ?? "")")
+                
+            }
+        }
+        
+        return names
+        
+    }
+    
+    static func fullAccessPlanetNames() -> String {
+        
+        var names = String()
+        for planet in planets {
+            if planet.type == IAPOfferType.fullAccess {
+                
+                if !names.isEmpty { names.append(", ") }
+                names.append("\(planet.name ?? "") ")
+                
+            }
+        }
+        
+        return names
+        
+    }
+    
+    static func freePlanets() -> [Planet]? {
+        
+        var returnPlanets: [Planet]!
+        
+        for planet in planets {
+            if planet.type == IAPOfferType.free {
+                returnPlanets.append(planet)
+            }
+        }
+        
+        return returnPlanets
+        
+    }
 
+    static func fullAccessPlanet() -> [Planet] {
+        
+        var returnPlanets: [Planet]!
+        
+        for planet in planets {
+            if planet.type == IAPOfferType.fullAccess {
+                returnPlanets.append(planet)
+            }
+        }
+        
+        return returnPlanets
+        
+    }
 }

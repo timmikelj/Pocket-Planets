@@ -8,13 +8,12 @@
 
 import Foundation
 
-class Offer {
+struct Offer {
     
-    var offerText: String!
-    var offerType: IAPOfferType!
+    let offerText: String?
+    let offerType: IAPOfferType!
     
-    convenience init(offerText: String, offerType: IAPOfferType) {
-        self.init()
+    init(offerText: String?, offerType: IAPOfferType) {
         self.offerText = offerText
         self.offerType = offerType
     }

@@ -93,19 +93,16 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     
     @IBAction func cameraButton(_ sender: UIButton) {
         
-        let image = ARView.snapshot()
-        print("Image taken")
-        imageInTheView.isHidden = false
-        imageInTheView.image = image
-
-        // dismiss Image in 5 seconds
-        let imageDismiss = DispatchTime.now() + 5
-        DispatchQueue.main.asyncAfter(deadline: imageDismiss) {
-            self.imageInTheView.isHidden = true
+        if UserDef.isFullAccessPurchased() {
+           
+            capturePhoto()
+            
+        } else {
+            
+            let iapVC = InAppPurchaseViewController()
+            self.navigationController?.pushViewController(iapVC, animated: true)
+            
         }
-
-        // Saving image
-        UIImageWriteToSavedPhotosAlbum(imageInTheView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
         
     }
     
@@ -139,6 +136,23 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    private func capturePhoto() {
+        
+        let image = ARView.snapshot()
+        imageInTheView.isHidden = false
+        imageInTheView.image = image
+        
+        // dismiss Image in 5 seconds
+        let imageDismiss = DispatchTime.now() + 5
+        DispatchQueue.main.asyncAfter(deadline: imageDismiss) {
+            self.imageInTheView.isHidden = true
+        }
+        
+        // Saving image
+        UIImageWriteToSavedPhotosAlbum(imageInTheView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        
     }
     
 }
