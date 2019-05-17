@@ -32,7 +32,6 @@
                                     <constraint firstAttribute="height" constant="40" id="tiP-fG-NIV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="venus" translatesAutoresizingMaskIntoConstraints="NO" id="ssc-hb-U3h">
@@ -85,7 +84,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="F7e-p5-Knj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="97x-j4-Ma8"/>
                             <constraint firstItem="84I-Px-vX2" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-110" id="9UB-cy-bw9"/>
@@ -108,6 +107,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="ZUt-3t-h1Z" id="wh3-Qf-6qi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,13 +117,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="earth" width="702" height="720"/>
-        <image name="jupiter" width="940" height="940"/>
-        <image name="mars" width="2205" height="2205"/>
-        <image name="mercury" width="1024" height="1024"/>
-        <image name="neptune" width="2188" height="2185"/>
-        <image name="saturn" width="1024" height="1024"/>
-        <image name="uranus" width="1720" height="1720"/>
-        <image name="venus" width="1024" height="1024"/>
+        <image name="earth" width="793" height="794"/>
+        <image name="jupiter" width="1080" height="1039"/>
+        <image name="mars" width="2046" height="2078"/>
+        <image name="mercury" width="1129" height="1126"/>
+        <image name="neptune" width="2170" height="2166"/>
+        <image name="saturn" width="958" height="504"/>
+        <image name="uranus" width="1588" height="1538"/>
+        <image name="venus" width="1118" height="1076"/>
     </resources>
 </document>

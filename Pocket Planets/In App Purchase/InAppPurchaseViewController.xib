@@ -25,11 +25,12 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6u-CI-RS1">
-                    <rect key="frame" x="100" y="660" width="175" height="40"/>
+                    <rect key="frame" x="60" y="654" width="255" height="46"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="2BA-0Q-ge5"/>
+                        <constraint firstAttribute="height" constant="46" id="2BA-0Q-ge5"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="Purchase Full Access">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -50,12 +51,12 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JMC-0C-KQA">
-                    <rect key="frame" x="0.0" y="88" width="375" height="544"/>
+                    <rect key="frame" x="0.0" y="88" width="375" height="536"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blC-o8-LhH">
-                    <rect key="frame" x="20" y="652" width="335" height="0.0"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="20" y="644" width="335" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -70,11 +71,11 @@
                 <constraint firstItem="JMC-0C-KQA" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Up7-eA-oob"/>
                 <constraint firstItem="blC-o8-LhH" firstAttribute="top" secondItem="JMC-0C-KQA" secondAttribute="bottom" constant="20" id="cib-5I-Ldu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="blC-o8-LhH" secondAttribute="trailing" constant="20" id="fmQ-Qm-zPS"/>
-                <constraint firstItem="M6u-CI-RS1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="mzQ-NT-7Xt"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M6u-CI-RS1" secondAttribute="trailing" constant="100" id="nT7-ja-e5o"/>
+                <constraint firstItem="M6u-CI-RS1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="mzQ-NT-7Xt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M6u-CI-RS1" secondAttribute="trailing" constant="60" id="nT7-ja-e5o"/>
                 <constraint firstItem="JMC-0C-KQA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pFV-17-Pjq"/>
                 <constraint firstItem="JMC-0C-KQA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="pJn-PN-btY"/>
-                <constraint firstItem="M6u-CI-RS1" firstAttribute="top" secondItem="blC-o8-LhH" secondAttribute="bottom" constant="8" id="vfY-cj-UIz"/>
+                <constraint firstItem="M6u-CI-RS1" firstAttribute="top" secondItem="blC-o8-LhH" secondAttribute="bottom" constant="10" id="vfY-cj-UIz"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

@@ -10,6 +10,8 @@ import UIKit
 
 private let tableViewHeaderHeight: CGFloat = 60
 private let headerViewFontSize: CGFloat = 20
+private let purchaseButtonTitle = "Purchase Full Access"
+private let restoredButtonTitle = "Restore Full Access"
 
 class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,11 +23,13 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet var priceLabel: UILabel!
     
     private let offerList = OfferList()
+    private let iapBrain = InAppPurchaseBrain()
+    private let purchaseIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        purchaseFullAccessButton.isEnabled = false
+        purchaseFullAccessButton.isHidden = true
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -40,7 +44,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
             
             if success {
                 
-                self.purchaseFullAccessButton.isEnabled = true
+                self.purchaseFullAccessButton.isHidden = false
                 self.loadIAPPrice()
             }
             
@@ -81,7 +85,6 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
         if let headerView = view as? UITableViewHeaderFooterView {
             headerView.contentView.backgroundColor = ppBackgroundColor
             headerView.textLabel?.font = UIFont.systemFont(ofSize: headerViewFontSize, weight: .semibold)
-            headerView.textLabel?.shadowColor = .gray
             headerView.textLabel?.textColor = ppTextColor
         }
         
@@ -121,11 +124,20 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func purchaseFullAccess(_ sender: UIButton) {
-        InAppPurchaseBrain.shared.purchase(productID: InAppPurchaseBrain.shared.iap_id)
+        
+        startIndicatorAnimation(for: sender)
+        
+        iapBrain.purchase(productID: InAppPurchaseBrain.shared.iap_id)
+        iapBrain.finishedLoadingPayment = { success in
+            
+            sender.setTitle(purchaseButtonTitle, for: .normal)
+            self.purchaseIndicator.stopAnimating()
+            
+        }
     }
     
     @IBAction func restoreFullAccess(_ sender: UIButton) {
-        InAppPurchaseBrain.shared.restorePurchases()
+        iapBrain.restorePurchases()
     }
     
     
@@ -138,7 +150,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
                 if let currency = product.value.priceLocale.currencyCode {
                     
                     self.priceLabel.text = "\(product.value.price) \(currency)"
-                    purchaseFullAccessButton.isEnabled = true
+                    purchaseFullAccessButton.isHidden = false
                     
                 }
             }
@@ -156,6 +168,13 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
         restorePurchaseButton.setTitleColor(ppTextColor, for: .normal)
         priceLabel.textColor = ppTextColor
         
+    }
+    
+    
+
+    func startIndicatorAnimation(for button: UIButton) {
+        purchaseIndicator.indicator(for: button)
+        purchaseIndicator.startAnimating()
     }
     
 }

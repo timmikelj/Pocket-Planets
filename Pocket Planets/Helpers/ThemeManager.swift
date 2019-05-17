@@ -10,8 +10,7 @@ import UIKit
 
 var ppTextColor: UIColor = .black
 var ppBackgroundColor: UIColor = .white
-
-private let darkModeColor: UIColor = UIColor(displayP3Red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
+let darkModeColor: UIColor = UIColor(displayP3Red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
 
 class ThemeManager {
     

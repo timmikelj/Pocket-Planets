@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2294F821228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2294F820228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift */; };
+		2294F823228F027A00C4A1AA /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2294F822228F027A00C4A1AA /* LaunchViewController.swift */; };
 		E06AB117228EC44D0001FD49 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AB116228EC44D0001FD49 /* ThemeManager.swift */; };
 		E06AB11B228ECAD70001FD49 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AB119228ECAD70001FD49 /* SettingsViewController.swift */; };
 		E06AB11C228ECAD70001FD49 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06AB11A228ECAD70001FD49 /* SettingsViewController.xib */; };
@@ -49,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2294F820228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extensions.swift"; sourceTree = "<group>"; };
+		2294F822228F027A00C4A1AA /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E06AB116228EC44D0001FD49 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E06AB119228ECAD70001FD49 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E06AB11A228ECAD70001FD49 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */,
 				E098F8A7202F4F0A0013B6FF /* Main.storyboard */,
 				E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */,
+				2294F822228F027A00C4A1AA /* LaunchViewController.swift */,
 				E06AB11D228EE6BD0001FD49 /* Planet List */,
 				E06AB118228ECAAA0001FD49 /* Settings */,
 				E07F5A1E2042F6EB005BD0F2 /* AR Controller */,
@@ -196,6 +201,7 @@
 				E0B24656228D734F00BF9CBD /* Constants.swift */,
 				E0B24658228D755B00BF9CBD /* UserDefaults.swift */,
 				E06AB116228EC44D0001FD49 /* ThemeManager.swift */,
+				2294F820228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -309,9 +315,11 @@
 				E07F5A1B2042F510005BD0F2 /* PlanetData.swift in Sources */,
 				E0B24659228D755B00BF9CBD /* UserDefaults.swift in Sources */,
 				E06AB117228EC44D0001FD49 /* ThemeManager.swift in Sources */,
+				2294F823228F027A00C4A1AA /* LaunchViewController.swift in Sources */,
 				E0B24666228D9A2000BF9CBD /* OfferList.swift in Sources */,
 				E0B2466D228D9D9F00BF9CBD /* Planet.swift in Sources */,
 				E0B2464F228D725600BF9CBD /* InAppPurchaseBrain.swift in Sources */,
+				2294F821228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift in Sources */,
 				E0D52056203C0FCD00083B6B /* PlanetListTableViewController.swift in Sources */,
 				E0B2465E228D911400BF9CBD /* InAppPurchaseViewController.swift in Sources */,
 				E0B24657228D734F00BF9CBD /* Constants.swift in Sources */,
