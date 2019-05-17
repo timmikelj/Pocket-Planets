@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6OF-r0-Dk1">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pocket Planets-->
+        <scene sceneID="Zf1-Bc-e46">
+            <objects>
+                <tableViewController id="6kk-ZA-ywz" customClass="PlanetListTableViewController" customModule="Pocket_Planets" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hA4-Me-JvK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="6kk-ZA-ywz" id="7Xf-Kk-Lmf"/>
+                            <outlet property="delegate" destination="6kk-ZA-ywz" id="qj4-fj-LHQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Pocket Planets" id="dLq-Sg-UZY">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="Ziu-kX-TJ3">
+                            <connections>
+                                <action selector="settingsButton:" destination="6kk-ZA-ywz" id="7W2-Ju-H9k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="planetTableView" destination="hA4-Me-JvK" id="ggj-Mf-n86"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18l-6k-CSA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-519.20000000000005" y="123.68815592203899"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController storyboardIdentifier="ARViewController" id="BV1-FR-VrT" customClass="ARViewController" customModule="Pocket_Planets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wwI-3R-EHZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdS-ko-60x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                            </arscnView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nsa-ou-e5E">
+                                <rect key="frame" x="0.0" y="665" width="375" height="113"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RS5-fa-wjC">
+                                        <rect key="frame" x="280" y="8" width="75" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="G4J-Um-1hZ"/>
+                                            <constraint firstAttribute="width" constant="75" id="Y5J-2O-Zcw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pua-uv-YPl">
+                                        <rect key="frame" x="153" y="31" width="69" height="69"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="69" id="GnI-ug-hqY"/>
+                                            <constraint firstAttribute="height" constant="69" id="rsl-dI-g5o"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="cameraButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="bz4-MW-lzu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="RS5-fa-wjC" secondAttribute="trailing" constant="20" id="0Cg-ag-Uwv"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Pua-uv-YPl" secondAttribute="trailing" constant="167" id="Gcl-Wg-jYn"/>
+                                    <constraint firstItem="Pua-uv-YPl" firstAttribute="centerX" secondItem="Nsa-ou-e5E" secondAttribute="centerX" priority="999" id="NcA-GI-dLz"/>
+                                    <constraint firstAttribute="bottom" secondItem="RS5-fa-wjC" secondAttribute="bottom" constant="5" id="X01-nf-Srd"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pua-uv-YPl" secondAttribute="bottom" constant="13" id="qRq-NA-eVc"/>
+                                    <constraint firstAttribute="height" constant="113" id="t1w-KG-f3r"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjV-L8-9Yc">
+                                <rect key="frame" x="15" y="44" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="1Tw-Fx-MBv"/>
+                                    <constraint firstAttribute="height" constant="44" id="tNX-YS-TnA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="dimissButton:" destination="BV1-FR-VrT" eventType="touchUpInside" id="sDf-XA-ZUe"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back button" translatesAutoresizingMaskIntoConstraints="NO" id="xJj-pl-K4Z">
+                                <rect key="frame" x="20" y="57" width="12" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="12" id="6Pf-cr-0Zi"/>
+                                    <constraint firstAttribute="height" constant="21" id="Coj-sA-P0n"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xdS-ko-60x" firstAttribute="leading" secondItem="Wow-Zs-Psm" secondAttribute="leading" id="1OP-5q-alT"/>
+                            <constraint firstItem="wjV-L8-9Yc" firstAttribute="top" secondItem="Wow-Zs-Psm" secondAttribute="top" id="7L3-Li-YYu"/>
+                            <constraint firstItem="Nsa-ou-e5E" firstAttribute="trailing" secondItem="Wow-Zs-Psm" secondAttribute="trailing" id="ETF-ug-0wq"/>
+                            <constraint firstItem="xdS-ko-60x" firstAttribute="bottom" secondItem="Wow-Zs-Psm" secondAttribute="bottom" id="IOS-9r-oFU"/>
+                            <constraint firstItem="Nsa-ou-e5E" firstAttribute="leading" secondItem="Wow-Zs-Psm" secondAttribute="leading" id="IcN-df-ZSq"/>
+                            <constraint firstItem="wjV-L8-9Yc" firstAttribute="leading" secondItem="Wow-Zs-Psm" secondAttribute="leading" constant="15" id="Wab-4s-EeJ"/>
+                            <constraint firstItem="xJj-pl-K4Z" firstAttribute="top" secondItem="Wow-Zs-Psm" secondAttribute="top" constant="13" id="dtN-Fo-aJw"/>
+                            <constraint firstItem="xdS-ko-60x" firstAttribute="top" secondItem="wwI-3R-EHZ" secondAttribute="top" id="ei2-dX-jdz"/>
+                            <constraint firstItem="xJj-pl-K4Z" firstAttribute="leading" secondItem="Wow-Zs-Psm" secondAttribute="leading" constant="20" id="kaX-pm-vTI"/>
+                            <constraint firstItem="xdS-ko-60x" firstAttribute="trailing" secondItem="Wow-Zs-Psm" secondAttribute="trailing" id="lJy-ga-Tcl"/>
+                            <constraint firstItem="Nsa-ou-e5E" firstAttribute="bottom" secondItem="Wow-Zs-Psm" secondAttribute="bottom" id="zc3-Tq-UJm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wow-Zs-Psm"/>
+                    </view>
+                    <connections>
+                        <outlet property="ARView" destination="xdS-ko-60x" id="JOr-lz-eEh"/>
+                        <outlet property="cameraButton" destination="Pua-uv-YPl" id="bR7-LB-Z6R"/>
+                        <outlet property="imageInTheView" destination="RS5-fa-wjC" id="EZX-Wf-imF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367.19999999999999" y="121.88905547226388"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9uE-EE-k8e">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6OF-r0-Dk1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xKH-9z-JjI">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6kk-ZA-ywz" kind="relationship" relationship="rootViewController" id="Bog-Fi-quE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L0V-Bd-ij9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1458.4000000000001" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back button" width="30" height="53"/>
+        <image name="settings" width="25" height="25"/>
+    </resources>
+</document>

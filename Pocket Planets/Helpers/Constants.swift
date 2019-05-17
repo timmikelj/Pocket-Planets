@@ -8,6 +8,9 @@
 
 import UIKit
 
+let appTitle = "Pocket Planets"
 let cameraButtonName = "button static"
 let cameraButtonSelectedName = "button pressed"
 let fullAccessLayerImageName = "full access layer"
+let tickImageName = "tick"
+let tickDarkModeImageName = "tick_darkmode"

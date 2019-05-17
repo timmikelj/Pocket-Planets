@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E06AB117228EC44D0001FD49 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AB116228EC44D0001FD49 /* ThemeManager.swift */; };
+		E06AB11B228ECAD70001FD49 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AB119228ECAD70001FD49 /* SettingsViewController.swift */; };
+		E06AB11C228ECAD70001FD49 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06AB11A228ECAD70001FD49 /* SettingsViewController.xib */; };
 		E07F5A1B2042F510005BD0F2 /* PlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07F5A1A2042F510005BD0F2 /* PlanetData.swift */; };
 		E098F8A2202F4F0A0013B6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */; };
 		E098F8A4202F4F0A0013B6FF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E098F8A3202F4F0A0013B6FF /* art.scnassets */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		E06AB116228EC44D0001FD49 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		E06AB119228ECAD70001FD49 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E06AB11A228ECAD70001FD49 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		E07F5A1A2042F510005BD0F2 /* PlanetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetData.swift; sourceTree = "<group>"; };
 		E098F89E202F4F0A0013B6FF /* Pocket Planets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Planets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,33 +90,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E07F5A1C2042F6DA005BD0F2 /* Model */ = {
+		E06AB118228ECAAA0001FD49 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E06AB119228ECAD70001FD49 /* SettingsViewController.swift */,
+				E06AB11A228ECAD70001FD49 /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E06AB11D228EE6BD0001FD49 /* Planet List */ = {
+			isa = PBXGroup;
+			children = (
+				E07F5A1C2042F6DA005BD0F2 /* Planet Data */,
+				E07F5A1D2042F6E1005BD0F2 /* Custom Cell */,
+				E0D52055203C0FCD00083B6B /* PlanetListTableViewController.swift */,
+			);
+			path = "Planet List";
+			sourceTree = "<group>";
+		};
+		E06AB11E228EE78D0001FD49 /* Offer Data */ = {
+			isa = PBXGroup;
+			children = (
+				E0B2464E228D725600BF9CBD /* InAppPurchaseBrain.swift */,
+				E0B24669228D9AE400BF9CBD /* IAPOfferTypes.swift */,
+				E0B24667228D9ACA00BF9CBD /* Offer.swift */,
+				E0B24665228D9A2000BF9CBD /* OfferList.swift */,
+			);
+			path = "Offer Data";
+			sourceTree = "<group>";
+		};
+		E07F5A1C2042F6DA005BD0F2 /* Planet Data */ = {
 			isa = PBXGroup;
 			children = (
 				E07F5A1A2042F510005BD0F2 /* PlanetData.swift */,
 				E0B2466C228D9D9F00BF9CBD /* Planet.swift */,
 			);
-			path = Model;
+			path = "Planet Data";
 			sourceTree = "<group>";
 		};
-		E07F5A1D2042F6E1005BD0F2 /* View */ = {
+		E07F5A1D2042F6E1005BD0F2 /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
 				E0D52057203C110800083B6B /* PlanetListTableViewCell.swift */,
 				E0D52058203C110800083B6B /* PlanetListTableViewCell.xib */,
-				E098F8A7202F4F0A0013B6FF /* Main.storyboard */,
-				E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */,
 			);
-			path = View;
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
-		E07F5A1E2042F6EB005BD0F2 /* Controller */ = {
+		E07F5A1E2042F6EB005BD0F2 /* AR Controller */ = {
 			isa = PBXGroup;
 			children = (
 				E098F8A5202F4F0A0013B6FF /* ARViewController.swift */,
-				E0D52055203C0FCD00083B6B /* PlanetListTableViewController.swift */,
 			);
-			path = Controller;
+			path = "AR Controller";
 			sourceTree = "<group>";
 		};
 		E098F895202F4F0A0013B6FF = {
@@ -135,10 +166,12 @@
 			isa = PBXGroup;
 			children = (
 				E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */,
-				E0B24660228D986C00BF9CBD /* In App Purchases */,
-				E07F5A1C2042F6DA005BD0F2 /* Model */,
-				E07F5A1D2042F6E1005BD0F2 /* View */,
-				E07F5A1E2042F6EB005BD0F2 /* Controller */,
+				E098F8A7202F4F0A0013B6FF /* Main.storyboard */,
+				E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */,
+				E06AB11D228EE6BD0001FD49 /* Planet List */,
+				E06AB118228ECAAA0001FD49 /* Settings */,
+				E07F5A1E2042F6EB005BD0F2 /* AR Controller */,
+				E0B24660228D986C00BF9CBD /* In App Purchase */,
 				E0B24650228D72B700BF9CBD /* Extensions */,
 				E0B24655228D734100BF9CBD /* Helpers */,
 				E098F8A3202F4F0A0013B6FF /* art.scnassets */,
@@ -167,27 +200,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		E0B24660228D986C00BF9CBD /* In App Purchases */ = {
+		E0B24660228D986C00BF9CBD /* In App Purchase */ = {
 			isa = PBXGroup;
 			children = (
-				E0B2464E228D725600BF9CBD /* InAppPurchaseBrain.swift */,
-				E0B24669228D9AE400BF9CBD /* IAPOfferTypes.swift */,
-				E0B24667228D9ACA00BF9CBD /* Offer.swift */,
-				E0B24665228D9A2000BF9CBD /* OfferList.swift */,
-				E0B2466B228D9C6500BF9CBD /* views */,
+				E0B2465C228D911400BF9CBD /* InAppPurchaseViewController.swift */,
+				E0B2465D228D911400BF9CBD /* InAppPurchaseViewController.xib */,
+				E06AB11E228EE78D0001FD49 /* Offer Data */,
+				E0B2466B228D9C6500BF9CBD /* Custom Cell */,
 			);
-			path = "In App Purchases";
+			path = "In App Purchase";
 			sourceTree = "<group>";
 		};
-		E0B2466B228D9C6500BF9CBD /* views */ = {
+		E0B2466B228D9C6500BF9CBD /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
 				E0B24661228D989B00BF9CBD /* IAPTableViewCell.swift */,
 				E0B24662228D989B00BF9CBD /* IAPTableViewCell.xib */,
-				E0B2465C228D911400BF9CBD /* InAppPurchaseViewController.swift */,
-				E0B2465D228D911400BF9CBD /* InAppPurchaseViewController.xib */,
 			);
-			path = views;
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +283,7 @@
 				E098F8A4202F4F0A0013B6FF /* art.scnassets in Resources */,
 				E098F8AE202F4F0A0013B6FF /* LaunchScreen.storyboard in Resources */,
 				E0B2465F228D911400BF9CBD /* InAppPurchaseViewController.xib in Resources */,
+				E06AB11C228ECAD70001FD49 /* SettingsViewController.xib in Resources */,
 				E0B24664228D989B00BF9CBD /* IAPTableViewCell.xib in Resources */,
 				E098F8A9202F4F0A0013B6FF /* Main.storyboard in Resources */,
 				E0D5205A203C110800083B6B /* PlanetListTableViewCell.xib in Resources */,
@@ -284,6 +315,7 @@
 				E0D52056203C0FCD00083B6B /* PlanetListTableViewController.swift in Sources */,
 				E0B2465E228D911400BF9CBD /* InAppPurchaseViewController.swift in Sources */,
 				E0B24657228D734F00BF9CBD /* Constants.swift in Sources */,
+				E06AB11B228ECAD70001FD49 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

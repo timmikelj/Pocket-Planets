@@ -11,13 +11,15 @@ import UIKit
 var ppTextColor: UIColor = .black
 var ppBackgroundColor: UIColor = .white
 
+private let darkModeColor: UIColor = UIColor(displayP3Red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
+
 class ThemeManager {
     
     private func applyThemeColors(isDarkMode: Bool) {
         
         if isDarkMode {
             ppTextColor = .white
-            ppBackgroundColor = .darkGray
+            ppBackgroundColor = darkModeColor
         } else {
             ppTextColor = .black
             ppBackgroundColor = .white
@@ -26,11 +28,20 @@ class ThemeManager {
     
     internal func applyTheme(isDarkMode: Bool) {
         
-        applyThemeColors(isDarkMode: isDarkMode)
+        guard let topVC = UIApplication.topViewController() else { return }
         
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: ppTextColor]
-        UINavigationBar.appearance().tintColor = ppBackgroundColor
-        UIBarButtonItem.appearance().tintColor = ppTextColor
+        applyThemeColors(isDarkMode: isDarkMode)
+
+        topVC.view.backgroundColor = ppBackgroundColor
+
+        topVC.navigationController?.navigationBar.tintColor = ppTextColor
+        topVC.navigationController?.navigationBar.barTintColor = ppBackgroundColor
+
+        if isDarkMode {
+            topVC.navigationController?.navigationBar.barStyle = .blackTranslucent
+        } else {
+            topVC.navigationController?.navigationBar.barStyle = .default
+        }
         
     }
     

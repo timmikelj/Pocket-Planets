@@ -12,12 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    private let themeManager = ThemeManager()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        themeManager.applyTheme(isDarkMode: UserDef.isDarkMode())
         return true
     }
 
