@@ -93,16 +93,17 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: IAPTableViewCell.identifier) as! IAPTableViewCell
         
         if indexPath.section == 0 {
-            
+
             cell.offerLabel.text = offerList.freeOffers()?[indexPath.row].offerText ?? ""
-            return cell
             
         } else {
             
             cell.offerLabel.text = offerList.fullAccessOffers()?[indexPath.row].offerText ?? ""
-            return cell
             
         }
+        
+        cell.selectionStyle = .none
+        return cell
         
     }
     

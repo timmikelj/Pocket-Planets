@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "earth.jpg",
+      "filename" : "earth.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "earth@2x.png",
       "scale" : "2x"
     },
     {

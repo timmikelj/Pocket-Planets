@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "jupiter.jpg",
+      "filename" : "jupiter.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "jupiter@2x.png",
       "scale" : "2x"
     },
     {

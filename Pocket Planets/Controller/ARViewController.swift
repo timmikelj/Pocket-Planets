@@ -14,7 +14,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
 
     static let identifier = "ARViewController"
     
-    var selectedPlanetIndex = Int()
+    var planet: Planet?
     private var selectedPlanetDiffuse: UIImage!
     private var imagePicker: UIImagePickerController!
     
@@ -35,7 +35,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
         
         // Create Material & assign it to my object
         let material = SCNMaterial()
-        let assetLink = "art.scnassets/\(PlanetData.planets[selectedPlanetIndex].patternImageName ?? "")"
+        let assetLink = "art.scnassets/\(planet?.patternImageName ?? "")"
         selectedPlanetDiffuse = UIImage(named: assetLink)
         material.diffuse.contents = selectedPlanetDiffuse
         marsSphere.materials = [material]

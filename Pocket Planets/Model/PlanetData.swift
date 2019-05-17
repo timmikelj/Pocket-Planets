@@ -95,7 +95,7 @@ class PlanetData {
             if planet.type == IAPOfferType.fullAccess {
                 
                 if !names.isEmpty { names.append(", ") }
-                names.append("\(planet.name ?? "") ")
+                names.append("\(planet.name ?? "")")
                 
             }
         }
