@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E06AB117228EC44D0001FD49 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AB116228EC44D0001FD49 /* ThemeManager.swift */; };
 		E07F5A1B2042F510005BD0F2 /* PlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07F5A1A2042F510005BD0F2 /* PlanetData.swift */; };
 		E098F8A2202F4F0A0013B6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */; };
 		E098F8A4202F4F0A0013B6FF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E098F8A3202F4F0A0013B6FF /* art.scnassets */; };
@@ -46,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E06AB116228EC44D0001FD49 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E07F5A1A2042F510005BD0F2 /* PlanetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetData.swift; sourceTree = "<group>"; };
 		E098F89E202F4F0A0013B6FF /* Pocket Planets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pocket Planets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				E0B24656228D734F00BF9CBD /* Constants.swift */,
 				E0B24658228D755B00BF9CBD /* UserDefaults.swift */,
+				E06AB116228EC44D0001FD49 /* ThemeManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				E0B24654228D731800BF9CBD /* Alert+Extensions.swift in Sources */,
 				E07F5A1B2042F510005BD0F2 /* PlanetData.swift in Sources */,
 				E0B24659228D755B00BF9CBD /* UserDefaults.swift in Sources */,
+				E06AB117228EC44D0001FD49 /* ThemeManager.swift in Sources */,
 				E0B24666228D9A2000BF9CBD /* OfferList.swift in Sources */,
 				E0B2466D228D9D9F00BF9CBD /* Planet.swift in Sources */,
 				E0B2464F228D725600BF9CBD /* InAppPurchaseBrain.swift in Sources */,

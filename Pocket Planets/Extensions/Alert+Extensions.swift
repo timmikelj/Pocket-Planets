@@ -15,7 +15,7 @@ extension UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: nil))
         
-        alert.view.tintColor = ppAlertTintColor
+        alert.view.tintColor = ppTextColor
         
         if let topVC = UIApplication.topViewController() {
             topVC.present(alert, animated: true, completion: nil)

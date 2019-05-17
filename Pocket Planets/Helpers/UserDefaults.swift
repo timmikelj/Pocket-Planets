@@ -10,6 +10,7 @@ import Foundation
 
 private let firstAppLaunchKey = "isFirstAppLaunch"
 private let appFullAccessKey = "full_access_iap"
+private let darkModeKey = "dark_mode"
 
 final class UserDef {
     
@@ -29,4 +30,11 @@ final class UserDef {
         UserDefaults.standard.set(true, forKey: appFullAccessKey)
     }
     
+    static func isDarkMode() -> Bool {
+        return UserDefaults.standard.bool(forKey: darkModeKey)
+    }
+    
+    static func darkModeApplied(_ isDarkMode: Bool) {
+        UserDefaults.standard.set(isDarkMode, forKey: darkModeKey)
+    }
 }

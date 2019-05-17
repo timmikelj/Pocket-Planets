@@ -8,9 +8,6 @@
 
 import UIKit
 
-let ppAlertTintColor: UIColor = .black
-let ppNavigationControllerTextColor: UIColor = .black
-let ppNavigationControllerBackgroundColor: UIColor = .white
 let cameraButtonName = "button static"
 let cameraButtonSelectedName = "button pressed"
 let fullAccessLayerImageName = "full access layer"

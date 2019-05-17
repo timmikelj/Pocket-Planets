@@ -32,8 +32,8 @@ class PlanetListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PlanetListTableViewCell.identifier, for: indexPath) as! PlanetListTableViewCell
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: PlanetListTableViewCell.identifier, for: indexPath) as! PlanetListTableViewCell
         let currentPlanet = PlanetData.planets[indexPath.row]
         
         cell.configureCell(with: currentPlanet)
@@ -43,31 +43,36 @@ class PlanetListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        let selectedPlanet = PlanetData.planets[indexPath.row]
         let arVC = storyboard?.instantiateViewController(withIdentifier: ARViewController.identifier) as! ARViewController
-        arVC.selectedPlanetIndex = indexPath.row
-        self.show(arVC, sender: nil)
+        
+        if selectedPlanet.type == .free {
+            
+            arVC.planet = selectedPlanet
+            self.show(arVC, sender: nil)
+            
+        } else {
+            
+            if UserDef.isFullAccessPurchased() {
+                
+                arVC.planet = selectedPlanet
+                show(arVC, sender: nil)
+                
+            } else {
+                
+                let iapVC = InAppPurchaseViewController()
+                show(iapVC, sender: nil)
+            }
+            
+        }
         
     }
     
-    override func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! PlanetListTableViewCell
-    }
-    
-    override func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! PlanetListTableViewCell
-        cell.planetImageView.frame = CGRect(x: 0, y: 0, width: 115, height: 115)
-    }
-    
-    // TableViewCell animation
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         UIView.animate(withDuration: 0.4) {
             cell.transform = CGAffineTransform.identity
         }
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
 
 }

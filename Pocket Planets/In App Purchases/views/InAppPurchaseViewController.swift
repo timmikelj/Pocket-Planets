@@ -45,6 +45,11 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: animated)
+         navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    override func willMove(toParentViewController parent: UIViewController?) {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,8 +73,10 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         
         if let headerView = view as? UITableViewHeaderFooterView {
-            headerView.contentView.backgroundColor = ppNavigationControllerBackgroundColor
-            headerView.textLabel?.textColor = ppNavigationControllerTextColor
+            headerView.contentView.backgroundColor = ppBackgroundColor
+            headerView.textLabel?.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+            headerView.textLabel?.shadowColor = .gray
+            headerView.textLabel?.textColor = ppTextColor
         }
         
     }

@@ -36,6 +36,7 @@ class PlanetListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
         setupRestrictionView()
         self.accessoryType = .disclosureIndicator
     }
@@ -50,14 +51,14 @@ class PlanetListTableViewCell: UITableViewCell {
         if !self.contentView.subviews.contains(restrictionView) {
         
             restrictionView.frame = self.contentView.bounds
-            restrictionView.backgroundColor = ppNavigationControllerBackgroundColor
+            restrictionView.backgroundColor = ppBackgroundColor
             restrictionView.alpha = 0.7
             
             let restrictionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: restrictionView.layer.frame.width, height: 34))
             restrictionLabel.text = "See With Full Access"
             restrictionLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
             restrictionLabel.textAlignment = .center
-            restrictionLabel.textColor = ppNavigationControllerTextColor
+            restrictionLabel.textColor = ppTextColor
             restrictionLabel.center = restrictionView.center
             
             restrictionView.addSubview(restrictionLabel)
@@ -69,6 +70,14 @@ class PlanetListTableViewCell: UITableViewCell {
     
     func removeRestrictionView() {
         self.restrictionView.removeFromSuperview()
+    }
+    
+    private func setupUI() {
+        
+        planetName.textColor = ppTextColor
+        planetSize.textColor = ppTextColor
+        planetDistanceFromSun.textColor = ppTextColor
+        contentView.backgroundColor = ppBackgroundColor
     }
     
 }
