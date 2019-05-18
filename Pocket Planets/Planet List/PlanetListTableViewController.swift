@@ -73,10 +73,13 @@ class PlanetListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
         cell.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-        UIView.animate(withDuration: 0.4) {
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.allowUserInteraction], animations: {
             cell.transform = CGAffineTransform.identity
-        }
+        }, completion: nil)
+        
     }
     
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {

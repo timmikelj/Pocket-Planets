@@ -24,8 +24,8 @@ class PlanetListTableViewCell: UITableViewCell {
         
         planetName.text = planet.name
         planetImageView.image = planet.image
-        planetSize.text = "Diameter: \(planet.diameterInKm ?? 0) miles"
-        planetDistanceFromSun.text = "Distance from Sun: \(planet.distanceFromSun ?? 0) million miles"
+        planetSize.text = "Diameter: \(planet.diameterInKm.convertToUserFriendlyDistance()) \(systemDistanceUnit())"
+        planetDistanceFromSun.text = "Distance from Sun: \(planet.distanceFromSun.convertToUserFriendlyDistance()) million \(systemDistanceUnit())"
         
         if !UserDef.isFullAccessPurchased() && planet.type == IAPOfferType.fullAccess {
             loadRestrictionView()

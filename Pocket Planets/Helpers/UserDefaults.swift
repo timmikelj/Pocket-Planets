@@ -11,6 +11,7 @@ import Foundation
 private let firstAppLaunchKey = "isFirstAppLaunch"
 private let appFullAccessKey = "full_access_iap"
 private let darkModeKey = "dark_mode"
+private let unitSystemKey = "unit_system"
 
 final class UserDef {
     
@@ -37,4 +38,34 @@ final class UserDef {
     static func darkModeApplied(_ isDarkMode: Bool) {
         UserDefaults.standard.set(isDarkMode, forKey: darkModeKey)
     }
+    
+    static func changeUnitSystem(to unit: DistanceUnit) {
+        UserDefaults.standard.set(unit.name, forKey: unitSystemKey)
+    }
+    
+    static func currentDistanceUnit() -> DistanceUnit {
+        
+        if let currentUnitName = UserDefaults.standard.object(forKey: unitSystemKey) as? String {
+            
+            switch currentUnitName {
+                
+                case UnitType.defaultUnit.rawValue:
+                    return units[0] // Chloe 🍺
+                
+                case UnitType.metric.rawValue:
+                    return units[1] // Calian 😭
+                
+                case UnitType.imperial.rawValue:
+                    return units[2]
+                
+                default:
+                    return units[0]
+                
+            }
+            
+        }
+        
+        return units[0]
+    }
+    
 }

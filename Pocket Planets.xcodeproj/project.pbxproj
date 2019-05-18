@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22514BD2228F48A70021F374 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22514BD1228F48A70021F374 /* Double+Extensions.swift */; };
 		2294F821228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2294F820228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift */; };
 		2294F823228F027A00C4A1AA /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2294F822228F027A00C4A1AA /* LaunchViewController.swift */; };
 		E06AB117228EC44D0001FD49 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AB116228EC44D0001FD49 /* ThemeManager.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		22514BD1228F48A70021F374 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		2294F820228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extensions.swift"; sourceTree = "<group>"; };
 		2294F822228F027A00C4A1AA /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E06AB116228EC44D0001FD49 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				E0B24651228D72D000BF9CBD /* UIApplication+Extensions.swift */,
 				E0B24653228D731800BF9CBD /* Alert+Extensions.swift */,
+				22514BD1228F48A70021F374 /* Double+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				TargetAttributes = {
 					E098F89D202F4F0A0013B6FF = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -313,6 +317,7 @@
 				E098F8A2202F4F0A0013B6FF /* AppDelegate.swift in Sources */,
 				E0B24654228D731800BF9CBD /* Alert+Extensions.swift in Sources */,
 				E07F5A1B2042F510005BD0F2 /* PlanetData.swift in Sources */,
+				22514BD2228F48A70021F374 /* Double+Extensions.swift in Sources */,
 				E0B24659228D755B00BF9CBD /* UserDefaults.swift in Sources */,
 				E06AB117228EC44D0001FD49 /* ThemeManager.swift in Sources */,
 				2294F823228F027A00C4A1AA /* LaunchViewController.swift in Sources */,
@@ -471,7 +476,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "timmikelj.Pocket-Planets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -491,7 +496,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "timmikelj.Pocket-Planets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

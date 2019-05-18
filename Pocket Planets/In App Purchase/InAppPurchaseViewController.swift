@@ -58,7 +58,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
          navigationController?.navigationBar.prefersLargeTitles = false
     }
     
-    override func willMove(toParentViewController parent: UIViewController?) {
+    override func willMove(toParent parent: UIViewController?) {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     

@@ -18,9 +18,9 @@ extension UIActivityIndicatorView {
         
 
         if button.backgroundColor != .white {
-            self.activityIndicatorViewStyle = .white
+            self.style = .white
         } else {
-            self.activityIndicatorViewStyle = .gray
+            self.style = .gray
         }
         
         button.addSubview(self)

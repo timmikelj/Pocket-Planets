@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet var unitsLabel: UILabel!
+    @IBOutlet var unitsSegmentedControl: UISegmentedControl!
     @IBOutlet var darkModeLabel: UILabel!
     @IBOutlet var darkModeSwitch: UISwitch!
     
@@ -29,9 +31,16 @@ class SettingsViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = appTitle
     }
     
-    override func willMove(toParentViewController parent: UIViewController?) {
+    override func willMove(toParent parent: UIViewController?) {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
+    @IBAction func unitsSegmentedControl(_ sender: UISegmentedControl) {
+        
+        UserDef.changeUnitSystem(to: units[sender.selectedSegmentIndex])
+        
+    }
+    
 
     @IBAction func darkModeSwitch(_ sender: UISwitch) {
         
@@ -52,6 +61,9 @@ class SettingsViewController: UIViewController {
         darkModeSwitch.layer.borderColor = ppTextColor.cgColor
         darkModeSwitch.thumbTintColor = ppTextColor
         
+        unitsLabel.textColor = ppTextColor
+        unitsSegmentedControl.tintColor = ppTextColor
+        
         darkModeLabel.textColor = ppTextColor
         
         view.backgroundColor = ppBackgroundColor
@@ -64,6 +76,12 @@ class SettingsViewController: UIViewController {
         } else {
             navigationController?.navigationBar.barStyle = .default
         }
+        
+        for unit in units {
+            unitsSegmentedControl.setTitle(unit.name, forSegmentAt: unit.index)
+        }
+        
+        unitsSegmentedControl.selectedSegmentIndex = UserDef.currentDistanceUnit().index
         
     }
 
