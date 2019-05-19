@@ -37,7 +37,9 @@ class SettingsViewController: UIViewController {
     
     @IBAction func unitsSegmentedControl(_ sender: UISegmentedControl) {
         
-        UserDef.changeUnitSystem(to: units[sender.selectedSegmentIndex])
+        if UserDef.isFullAccessPurchased()!! {
+            UserDef.changeUnitSystem(to: units[sender.selectedSegmentIndex])
+        }
         
     }
     

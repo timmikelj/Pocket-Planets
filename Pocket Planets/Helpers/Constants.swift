@@ -16,7 +16,7 @@ let tickImageName = "tick"
 let tickDarkModeImageName = "tick_darkmode"
 
 enum UnitType: String {
-    case defaultUnit = "Defaults"
+    case defaultUnit = "Default"
     case metric = "Metric"
     case imperial = "Imperial"
 }
