@@ -18,11 +18,6 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     static let identifier = "InAppPurchaseViewController"
 
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var IAPView: UIView!
-    @IBOutlet var purchaseFullAccessButton: UIButton!
-    @IBOutlet var restorePurchaseButton: UIButton!
-    @IBOutlet var priceLabel: UILabel!
-    @IBOutlet var IAPViewBottomConstraint: NSLayoutConstraint!
     
     private let offerList = OfferList()
     private let iapBrain = InAppPurchaseBrain()

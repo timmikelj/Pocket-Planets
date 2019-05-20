@@ -21,6 +21,8 @@
 		E098F8AE202F4F0A0013B6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */; };
 		E0AB3ECA2292DFE80045BE7A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0AB3EC92292DFE80045BE7A /* StoreKit.framework */; };
 		E0AB3ECC2292E4230045BE7A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB3ECB2292E4230045BE7A /* UIView+Extensions.swift */; };
+		E0AB3ECE2292F3390045BE7A /* CustomIAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB3ECD2292F3390045BE7A /* CustomIAPView.swift */; };
+		E0AB3ED52292F4D80045BE7A /* CustomIAPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0AB3ED42292F4D80045BE7A /* CustomIAPView.xib */; };
 		E0B2464F228D725600BF9CBD /* InAppPurchaseBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2464E228D725600BF9CBD /* InAppPurchaseBrain.swift */; };
 		E0B24652228D72D000BF9CBD /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B24651228D72D000BF9CBD /* UIApplication+Extensions.swift */; };
 		E0B24654228D731800BF9CBD /* Alert+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B24653228D731800BF9CBD /* Alert+Extensions.swift */; };
@@ -71,6 +73,8 @@
 		E0AB3EC82292DFDD0045BE7A /* Pocket Planets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pocket Planets.entitlements"; sourceTree = "<group>"; };
 		E0AB3EC92292DFE80045BE7A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E0AB3ECB2292E4230045BE7A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		E0AB3ECD2292F3390045BE7A /* CustomIAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIAPView.swift; sourceTree = "<group>"; };
+		E0AB3ED42292F4D80045BE7A /* CustomIAPView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomIAPView.xib; sourceTree = "<group>"; };
 		E0B2464E228D725600BF9CBD /* InAppPurchaseBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseBrain.swift; sourceTree = "<group>"; };
 		E0B24651228D72D000BF9CBD /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		E0B24653228D731800BF9CBD /* Alert+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extensions.swift"; sourceTree = "<group>"; };
@@ -204,6 +208,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E0AB3ED12292F3520045BE7A /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				E0AB3ECD2292F3390045BE7A /* CustomIAPView.swift */,
+				E0AB3ED42292F4D80045BE7A /* CustomIAPView.xib */,
+			);
+			path = "Custom View";
+			sourceTree = "<group>";
+		};
 		E0B24650228D72B700BF9CBD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +246,7 @@
 				E0B2465D228D911400BF9CBD /* InAppPurchaseViewController.xib */,
 				E06AB11E228EE78D0001FD49 /* Offer Data */,
 				E0B2466B228D9C6500BF9CBD /* Custom Cell */,
+				E0AB3ED12292F3520045BE7A /* Custom View */,
 			);
 			path = "In App Purchase";
 			sourceTree = "<group>";
@@ -323,6 +337,7 @@
 				E098F8A9202F4F0A0013B6FF /* Main.storyboard in Resources */,
 				E0D5205A203C110800083B6B /* PlanetListTableViewCell.xib in Resources */,
 				E0B2465B228D8B5000BF9CBD /* Assets.xcassets in Resources */,
+				E0AB3ED52292F4D80045BE7A /* CustomIAPView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +365,7 @@
 				E0B24666228D9A2000BF9CBD /* OfferList.swift in Sources */,
 				E0B2466D228D9D9F00BF9CBD /* Planet.swift in Sources */,
 				E0B2464F228D725600BF9CBD /* InAppPurchaseBrain.swift in Sources */,
+				E0AB3ECE2292F3390045BE7A /* CustomIAPView.swift in Sources */,
 				2294F821228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift in Sources */,
 				E0D52056203C0FCD00083B6B /* PlanetListTableViewController.swift in Sources */,
 				E0B2465E228D911400BF9CBD /* InAppPurchaseViewController.swift in Sources */,
