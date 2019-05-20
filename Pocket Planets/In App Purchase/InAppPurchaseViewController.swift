@@ -18,9 +18,11 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     static let identifier = "InAppPurchaseViewController"
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var IAPView: UIView!
     @IBOutlet var purchaseFullAccessButton: UIButton!
     @IBOutlet var restorePurchaseButton: UIButton!
     @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var IAPViewBottomConstraint: NSLayoutConstraint!
     
     private let offerList = OfferList()
     private let iapBrain = InAppPurchaseBrain()
@@ -29,14 +31,12 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        purchaseFullAccessButton.isHidden = true
+        setupUI()
         
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: IAPTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: IAPTableViewCell.identifier)
-        
-        purchaseFullAccessButton.layer.cornerRadius = 8
         
         InAppPurchaseBrain.shared.fetchInAppPurchases()
         
@@ -44,7 +44,6 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
             
             if success {
                 
-                self.purchaseFullAccessButton.isHidden = false
                 self.loadIAPPrice()
             }
             
@@ -53,11 +52,16 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         loadUI()
         navigationController?.setNavigationBarHidden(false, animated: animated)
         navigationController?.navigationBar.prefersLargeTitles = false
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        animateUI { (true) in
+//            //
+//        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -148,11 +152,49 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
                 if let currency = product.value.priceLocale.currencyCode {
                     
                     self.priceLabel.text = "\(product.value.price) \(currency)"
-                    purchaseFullAccessButton.isHidden = false
+                    
+                    animateUI { (true) in
+                        self.showPurchaseAndRestoreButtons()
+                    }
                     
                 }
             }
         }
+        
+    }
+    
+    private func showPurchaseAndRestoreButtons() {
+        
+        purchaseFullAccessButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+        purchaseFullAccessButton.isHidden = false
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: [], animations: {
+            
+            self.purchaseFullAccessButton.transform = CGAffineTransform.identity
+            
+        }) { (true) in
+            
+            self.restorePurchaseButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+            self.restorePurchaseButton.isHidden = false
+            
+            UIView.animate(withDuration: 0.4, delay: 0.5, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.7, options: [], animations: {
+                
+                self.restorePurchaseButton.transform = CGAffineTransform.identity
+                
+            })
+            
+        }
+        
+    }
+    
+    private func setupUI() {
+        
+        IAPViewBottomConstraint.constant = -300
+        
+        purchaseFullAccessButton.isHidden = true
+        restorePurchaseButton.isHidden = true
+        
+        purchaseFullAccessButton.layer.cornerRadius = 8
         
     }
     
@@ -161,16 +203,45 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
         view.backgroundColor = ppBackgroundColor
         tableView.backgroundColor = ppBackgroundColor
         
-        purchaseFullAccessButton.backgroundColor = ppTextColor
-        purchaseFullAccessButton.setTitleColor(ppBackgroundColor, for: .normal)
-        restorePurchaseButton.setTitleColor(ppTextColor, for: .normal)
-        priceLabel.textColor = ppTextColor
+        IAPView.roundCorners([.topLeft, .topRight], radius: 20)
+        
+        if ppTextColor == .black {
+            IAPView.backgroundColor = darkModeColor
+        } else {
+            IAPView.backgroundColor = ppTextColor
+        }
+        
+        IAPView.layer.shadowColor = ppBackgroundColor.cgColor
+        IAPView.layer.shadowOffset = CGSize(width: 0, height: -2)
+        IAPView.layer.shadowRadius = 4
+        
+        purchaseFullAccessButton.backgroundColor = ppBackgroundColor
+        purchaseFullAccessButton.setTitleColor(ppTextColor, for: .normal)
+        restorePurchaseButton.setTitleColor(ppBackgroundColor, for: .normal)
+        priceLabel.textColor = ppBackgroundColor
         
     }
+    
+    private func animateUI(completion: @escaping (Bool) -> Void) {
 
-    func startIndicatorAnimation(for button: UIButton) {
+        IAPViewBottomConstraint.constant = 0
+        
+        UIView.animate(withDuration: 0.7, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: [.preferredFramesPerSecond60], animations: {
+            
+            self.IAPView.layoutIfNeeded()
+            
+        }) { (true) in
+            completion(true)
+        }
+    }
+
+    private func startIndicatorAnimation(for button: UIButton) {
         purchaseIndicator.indicator(for: button)
         purchaseIndicator.startAnimating()
+    }
+    
+    private func startIAPloadingIndicator() {
+        
     }
     
 }

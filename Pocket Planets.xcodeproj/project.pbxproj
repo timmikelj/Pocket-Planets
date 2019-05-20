@@ -19,6 +19,8 @@
 		E098F8A6202F4F0A0013B6FF /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F8A5202F4F0A0013B6FF /* ARViewController.swift */; };
 		E098F8A9202F4F0A0013B6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F8A7202F4F0A0013B6FF /* Main.storyboard */; };
 		E098F8AE202F4F0A0013B6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */; };
+		E0AB3ECA2292DFE80045BE7A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0AB3EC92292DFE80045BE7A /* StoreKit.framework */; };
+		E0AB3ECC2292E4230045BE7A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB3ECB2292E4230045BE7A /* UIView+Extensions.swift */; };
 		E0B2464F228D725600BF9CBD /* InAppPurchaseBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B2464E228D725600BF9CBD /* InAppPurchaseBrain.swift */; };
 		E0B24652228D72D000BF9CBD /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B24651228D72D000BF9CBD /* UIApplication+Extensions.swift */; };
 		E0B24654228D731800BF9CBD /* Alert+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B24653228D731800BF9CBD /* Alert+Extensions.swift */; };
@@ -66,6 +68,9 @@
 		E098F8A8202F4F0A0013B6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E098F8AD202F4F0A0013B6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E098F8AF202F4F0A0013B6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0AB3EC82292DFDD0045BE7A /* Pocket Planets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pocket Planets.entitlements"; sourceTree = "<group>"; };
+		E0AB3EC92292DFE80045BE7A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E0AB3ECB2292E4230045BE7A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E0B2464E228D725600BF9CBD /* InAppPurchaseBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseBrain.swift; sourceTree = "<group>"; };
 		E0B24651228D72D000BF9CBD /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		E0B24653228D731800BF9CBD /* Alert+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extensions.swift"; sourceTree = "<group>"; };
@@ -90,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0AB3ECA2292DFE80045BE7A /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +163,7 @@
 			children = (
 				E098F8A0202F4F0A0013B6FF /* Pocket Planets */,
 				E098F89F202F4F0A0013B6FF /* Products */,
+				E0AB3EC52292DFDD0045BE7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +178,7 @@
 		E098F8A0202F4F0A0013B6FF /* Pocket Planets */ = {
 			isa = PBXGroup;
 			children = (
+				E0AB3EC82292DFDD0045BE7A /* Pocket Planets.entitlements */,
 				E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */,
 				E098F8A7202F4F0A0013B6FF /* Main.storyboard */,
 				E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */,
@@ -188,12 +196,21 @@
 			path = "Pocket Planets";
 			sourceTree = "<group>";
 		};
+		E0AB3EC52292DFDD0045BE7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0AB3EC92292DFE80045BE7A /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E0B24650228D72B700BF9CBD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				E0B24651228D72D000BF9CBD /* UIApplication+Extensions.swift */,
 				E0B24653228D731800BF9CBD /* Alert+Extensions.swift */,
 				22514BD1228F48A70021F374 /* Double+Extensions.swift */,
+				E0AB3ECB2292E4230045BE7A /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,6 +281,14 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.AutoFillCredentialProvider = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -318,6 +343,7 @@
 				E0B24654228D731800BF9CBD /* Alert+Extensions.swift in Sources */,
 				E07F5A1B2042F510005BD0F2 /* PlanetData.swift in Sources */,
 				22514BD2228F48A70021F374 /* Double+Extensions.swift in Sources */,
+				E0AB3ECC2292E4230045BE7A /* UIView+Extensions.swift in Sources */,
 				E0B24659228D755B00BF9CBD /* UserDefaults.swift in Sources */,
 				E06AB117228EC44D0001FD49 /* ThemeManager.swift in Sources */,
 				2294F823228F027A00C4A1AA /* LaunchViewController.swift in Sources */,
