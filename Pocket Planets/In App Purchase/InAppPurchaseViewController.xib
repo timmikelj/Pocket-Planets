@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InAppPurchaseViewController" customModule="Pocket_Planets" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="JMC-0C-KQA" id="RQk-vP-bfB"/>
+                <outlet property="tableViewBottomConstraint" destination="1ug-gI-0Ef" id="4mO-p6-HdF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,6 +29,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="JMC-0C-KQA" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="1ug-gI-0Ef"/>
                 <constraint firstItem="JMC-0C-KQA" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Up7-eA-oob"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JMC-0C-KQA" secondAttribute="bottom" id="bX8-tC-sAI"/>
                 <constraint firstItem="JMC-0C-KQA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pFV-17-Pjq"/>

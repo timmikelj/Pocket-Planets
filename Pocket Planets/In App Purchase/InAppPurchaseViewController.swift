@@ -83,6 +83,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
             headerView.contentView.backgroundColor = ppBackgroundColor
             headerView.textLabel?.font = UIFont.systemFont(ofSize: headerViewFontSize, weight: .semibold)
             headerView.textLabel?.textColor = ppTextColor
+            headerView.alpha = 0.95
         }
         
     }
@@ -163,21 +164,24 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
         purchaseFullAccessButton.transform = CGAffineTransform(scaleX: 0, y: 0)
         purchaseFullAccessButton.isHidden = false
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: [], animations: {
-            
-            self.purchaseFullAccessButton.transform = CGAffineTransform.identity
-            
-        }) { (true) in
-            
-            self.restorePurchaseButton.transform = CGAffineTransform(scaleX: 0, y: 0)
-            self.restorePurchaseButton.isHidden = false
-            
-            UIView.animate(withDuration: 0.4, delay: 0.5, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.7, options: [], animations: {
+        DispatchQueue.main.async {
+        
+            UIView.animate(withDuration: 0.6, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.7, options: [.curveEaseIn], animations: {
                 
-                self.restorePurchaseButton.transform = CGAffineTransform.identity
+                self.purchaseFullAccessButton.transform = CGAffineTransform(scaleX: 1, y: 1)
                 
-            })
-            
+            }) { (true) in
+                
+                self.restorePurchaseButton.transform = CGAffineTransform(scaleX: 0, y: 0)
+                self.restorePurchaseButton.isHidden = false
+                
+                UIView.animate(withDuration: 0.4, delay: 2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.6, options: [.curveEaseOut], animations: {
+                    
+                    self.restorePurchaseButton.transform = CGAffineTransform(scaleX: 1, y: 1)
+                    
+                })
+                
+            }
         }
         
     }
@@ -190,6 +194,9 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
         restorePurchaseButton.isHidden = true
         
         purchaseFullAccessButton.layer.cornerRadius = 8
+        
+        self.IAPView.translatesAutoresizingMaskIntoConstraints = false
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
         
     }
     
@@ -220,13 +227,17 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     private func animateUI(completion: @escaping (Bool) -> Void) {
 
         IAPViewBottomConstraint.constant = 0
+        tableViewBottomConstraint.constant = -IAPView.frame.height
         
-        UIView.animate(withDuration: 0.7, delay: 0.2, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: [.preferredFramesPerSecond60], animations: {
-            
-            self.IAPView.layoutIfNeeded()
-            
-        }) { (true) in
-            completion(true)
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.8, options: [.curveEaseInOut], animations: {
+                
+                self.IAPView.layoutIfNeeded()
+                
+            }) { (true) in
+                self.tableView.layoutIfNeeded()
+                completion(true)
+            }
         }
     }
 
