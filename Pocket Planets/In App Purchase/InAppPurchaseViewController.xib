@@ -81,6 +81,5 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="136.80000000000001" y="126.38680659670166"/>
         </view>
-        <navigationItem title="Title" id="yH4-Nw-2cx"/>
     </objects>
 </document>

@@ -53,13 +53,11 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         loadUI()
         navigationController?.setNavigationBarHidden(false, animated: animated)
-         navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
-    override func willMove(toParent parent: UIViewController?) {
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -169,8 +167,6 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
         priceLabel.textColor = ppTextColor
         
     }
-    
-    
 
     func startIndicatorAnimation(for button: UIButton) {
         purchaseIndicator.indicator(for: button)

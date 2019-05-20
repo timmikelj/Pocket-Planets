@@ -21,29 +21,33 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     @IBOutlet weak var ARView: ARSCNView!
     @IBOutlet weak var imageInTheView: UIImageView!
     @IBOutlet var cameraButton: UIButton!
+    @IBOutlet var imageViewTrailingConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imageInTheView.isHidden = true
+        imageInTheView.layer.cornerRadius = 4
+        imageInTheView.layer.borderWidth = 2
+        imageInTheView.layer.borderColor = UIColor.white.cgColor
         
         // Set the view's delegate
         ARView.delegate = self
         
         // Create GEOMETRY
-        let marsSphere = SCNSphere(radius: 0.15)
+        let planetSphere = SCNSphere(radius: 0.15)
         
         // Create Material & assign it to my object
         let material = SCNMaterial()
         let assetLink = "art.scnassets/\(planet?.patternImageName ?? "")"
         selectedPlanetDiffuse = UIImage(named: assetLink)
         material.diffuse.contents = selectedPlanetDiffuse
-        marsSphere.materials = [material]
+        planetSphere.materials = [material]
         
         // Create a NODE
         let node = SCNNode()
         node.position = SCNVector3(x : 0, y : 0.1, z : -0.5)
-        node.geometry = marsSphere
+        node.geometry = planetSphere
         
         // Add node into my scene
         ARView.scene.rootNode.addChildNode(node)
@@ -78,7 +82,6 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // Pause the view's session
         ARView.session.pause()
     }
     
@@ -92,7 +95,18 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     }
     
     @IBAction func cameraButton(_ sender: UIButton) {
-        capturePhoto()
+        
+        if UserDef.isFullAccessPurchased() {
+
+            capturePhoto()
+
+        } else {
+
+            let iapVC = InAppPurchaseViewController()
+            self.navigationController?.pushViewController(iapVC, animated: true)
+
+        }
+
     }
     
     // MARK: - Image saving functions
@@ -119,8 +133,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
         imagePicker.dismiss(animated: true, completion: nil)
         imageInTheView.image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage
@@ -136,10 +150,16 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
         imageInTheView.isHidden = false
         imageInTheView.image = image
         
-        // dismiss Image in 5 seconds
-        let imageDismiss = DispatchTime.now() + 5
-        DispatchQueue.main.asyncAfter(deadline: imageDismiss) {
+        imageViewTrailingConstraint.constant = -300
+        UIView.animate(withDuration: 0.5, delay: 5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.6, options: [], animations: {
+            
+            self.imageInTheView.layoutIfNeeded()
+            
+        }) { (true) in
+            
+            self.imageViewTrailingConstraint.constant = 20
             self.imageInTheView.isHidden = true
+            self.imageInTheView.layoutIfNeeded()
         }
         
         // Saving image
@@ -149,12 +169,10 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     
 }
 
-// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
 	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
 }
 
-// Helper function inserted by Swift 4.2 migrator.
 fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
 	return input.rawValue
 }

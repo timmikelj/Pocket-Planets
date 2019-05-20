@@ -19,16 +19,13 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadUI()
+        
+        self.title = "Settings"
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem?.title = ""
         navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem?.title = appTitle
+        loadUI()
     }
     
     override func willMove(toParent parent: UIViewController?) {
@@ -36,25 +33,28 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func unitsSegmentedControl(_ sender: UISegmentedControl) {
-        
-        if UserDef.isFullAccessPurchased()!! {
-            UserDef.changeUnitSystem(to: units[sender.selectedSegmentIndex])
-        }
-        
+        UserDef.changeUnitSystem(to: units[sender.selectedSegmentIndex])
     }
     
 
     @IBAction func darkModeSwitch(_ sender: UISwitch) {
         
-        UserDef.darkModeApplied(sender.isOn)
-        themeManager.applyTheme(isDarkMode: sender.isOn)
-        loadUI()
+        if UserDef.isFullAccessPurchased() {
+            
+            UserDef.darkModeApplied(sender.isOn)
+            themeManager.applyTheme(isDarkMode: sender.isOn)
+            loadUI()
+            
+        } else {
+            
+            let iapVC = InAppPurchaseViewController()
+            self.navigationController?.pushViewController(iapVC, animated: true)
+            
+        }
         
     }
     
     private func loadUI() {
-        
-        self.title = "Settings"
         
         darkModeSwitch.isOn = UserDef.isDarkMode()
         darkModeSwitch.onTintColor = ppBackgroundColor

@@ -56,7 +56,7 @@ class PlanetListTableViewCell: UITableViewCell {
         if !self.contentView.subviews.contains(restrictionView) {
         
             restrictionView.frame = self.contentView.bounds
-            restrictionView.alpha = 0.85
+            restrictionView.alpha = 0.9
             
             self.contentView.addSubview(restrictionView)
             

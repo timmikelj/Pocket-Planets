@@ -24,7 +24,12 @@ class PlanetListTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         reloadUI()
         tableView.reloadData()
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        if navigationController?.isNavigationBarHidden ?? false {
+            navigationController?.setNavigationBarHidden(false, animated: animated)
+        }
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,7 +90,7 @@ class PlanetListTableViewController: UITableViewController {
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {
         
         let settingsVC = SettingsViewController()
-        show(settingsVC, sender: sender)
+        self.navigationController?.pushViewController(settingsVC, animated: true)
         
     }
     

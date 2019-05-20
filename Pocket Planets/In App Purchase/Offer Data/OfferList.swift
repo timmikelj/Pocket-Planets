@@ -13,7 +13,9 @@ class OfferList {
     private let offers: [Offer] = [
         
         Offer(offerText: "See \(PlanetData.freePlanetNames()) in AR.", offerType: .free),
-        Offer(offerText: "See all planets included in free access.", offerType: .fullAccess),
+        Offer(offerText: "Change distance units.", offerType: .free),
+        Offer(offerText: "Unlock Dark Mode 🌚.", offerType: .fullAccess),
+        Offer(offerText: "See all planets included with free access.", offerType: .fullAccess),
         Offer(offerText: "See \(PlanetData.fullAccessPlanetNames()) in AR.", offerType: .fullAccess),
         Offer(offerText: "Take photos of planets in real world and save them to your photo library.", offerType: .fullAccess)
     
