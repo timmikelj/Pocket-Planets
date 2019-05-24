@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,9 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomIAPView" customModule="Pocket_Planets" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Kc2-y1-WQp"/>
-                <outlet property="priceLabel" destination="LMG-U1-NtA" id="uqa-2z-NGT"/>
-                <outlet property="purchaseFullAccessButton" destination="jsy-JX-lVw" id="Wsh-0b-obz"/>
-                <outlet property="restorePurchaseButton" destination="G8H-kN-QQf" id="NS9-yI-4kE"/>
+                <outlet property="priceLabel" destination="LMG-U1-NtA" id="ceY-gZ-qyR"/>
+                <outlet property="purchaseFullAccessButton" destination="jsy-JX-lVw" id="8q9-JC-Q2X"/>
+                <outlet property="restorePurchaseButton" destination="G8H-kN-QQf" id="e8z-PJ-XDA"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -33,6 +33,9 @@
                     <state key="normal" title="Purchase Full Access">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="purchaseFullAccess:" destination="-1" eventType="touchUpInside" id="ODe-f1-bKu"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMG-U1-NtA">
                     <rect key="frame" x="245" y="16" width="0.0" height="24"/>
@@ -52,6 +55,9 @@
                     <state key="normal" title="Restore Full Access">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="restoreFullAccess:" destination="-1" eventType="touchUpInside" id="wbS-AS-nTW"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
