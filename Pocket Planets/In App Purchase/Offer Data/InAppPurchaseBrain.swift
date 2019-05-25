@@ -15,8 +15,6 @@ private let restoredMessage = "You have successfully restored full access to Poc
 
 class InAppPurchaseBrain: NSObject {
     
-    static var shared = InAppPurchaseBrain()
-    
     let iap_id = "pocket_planets_full_access"
     var products: [String: SKProduct] = [:]
     var IAPLoaded: ((_ completed: Bool) -> Void)? = nil
@@ -61,7 +59,6 @@ extension InAppPurchaseBrain: SKProductsRequestDelegate, SKPaymentTransactionObs
         }
         
         IAPLoaded!(true)
-        finishedLoadingPayment?(true)
     }
     
     func request(_ request: SKRequest, didFailWithError error: Error) {
@@ -90,7 +87,9 @@ extension InAppPurchaseBrain: SKProductsRequestDelegate, SKPaymentTransactionObs
                     showRestoredMessage()
                     break
                     
-                default: break
+                default:
+                    finishedLoadingPayment?(true)
+                    break
                     
                 }
             }

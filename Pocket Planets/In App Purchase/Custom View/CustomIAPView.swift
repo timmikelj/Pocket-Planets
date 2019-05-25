@@ -19,7 +19,7 @@ class CustomIAPView: UIView {
     @IBOutlet var restorePurchaseButton: UIButton!
     @IBOutlet var priceLabel: UILabel!
     
-    private let iapBrain = InAppPurchaseBrain()
+    private var iapBrain: InAppPurchaseBrain?
     private let purchaseIndicator = UIActivityIndicatorView()
 
     lazy var bottomConstraint = self.bottomAnchor.constraint(equalTo: self.superview!.safeAreaLayoutGuide.bottomAnchor, constant: 0)
@@ -44,8 +44,11 @@ class CustomIAPView: UIView {
         contentView.fixInView(self)
         
         contentView.layer.shadowColor = UIColor.black.cgColor
-        contentView.layer.shadowOpacity = 0.5
+        contentView.layer.shadowOpacity = 0.3
         contentView.layer.shadowRadius = 2
+        
+        contentView.layer.cornerRadius = 20
+        contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         if ppTextColor == .black {
             contentView.backgroundColor = darkModeColor
@@ -64,7 +67,7 @@ class CustomIAPView: UIView {
         
     }
     
-    func setupWithConstraints(to view: UIView, tableView: UITableView) {
+    func setup(withConstraintsTo view: UIView, tableView: UITableView, iapBrain: InAppPurchaseBrain) {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(self)
@@ -82,6 +85,8 @@ class CustomIAPView: UIView {
         
         tableViewBottomConstraint = tableView.bottomAnchor.constraint(equalToSystemSpacingBelow: contentView.topAnchor, multiplier: 0)
         tableViewBottomConstraint.isActive = true
+        
+        self.iapBrain = iapBrain
         
     }
     
@@ -136,8 +141,8 @@ class CustomIAPView: UIView {
         
         startIndicatorAnimation(for: sender)
         
-        iapBrain.purchase(productID: InAppPurchaseBrain.shared.iap_id)
-        iapBrain.finishedLoadingPayment = { success in
+        iapBrain?.purchase(productID: iapBrain?.iap_id ?? "")
+        iapBrain?.finishedLoadingPayment = { success in
             
             sender.setTitle(purchaseButtonTitle, for: .normal)
             self.purchaseIndicator.stopAnimating()
@@ -146,7 +151,7 @@ class CustomIAPView: UIView {
     }
     
     @IBAction func restoreFullAccess(_ sender: UIButton) {
-        iapBrain.restorePurchases()
+        iapBrain?.restorePurchases()
     }
 
     

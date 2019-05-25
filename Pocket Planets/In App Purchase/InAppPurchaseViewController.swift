@@ -19,6 +19,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     
     private let offerList = OfferList()
     private let iapView = CustomIAPView()
+    private let iapBrain = InAppPurchaseBrain()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +29,9 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: IAPTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: IAPTableViewCell.identifier)
         
-        InAppPurchaseBrain.shared.fetchInAppPurchases()
+        iapBrain.fetchInAppPurchases()
         
-        InAppPurchaseBrain.shared.IAPLoaded = { success in
+        iapBrain.IAPLoaded = { success in
             
             if success {
                 
@@ -39,7 +40,7 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
             
         }
         
-        iapView.setupWithConstraints(to: self.view, tableView: tableView)
+        iapView.setup(withConstraintsTo: self.view, tableView: tableView, iapBrain: iapBrain)
     
     }
     
@@ -114,9 +115,9 @@ class InAppPurchaseViewController: UIViewController, UITableViewDelegate, UITabl
     
     private func loadIAPPrice() {
         
-        for product in InAppPurchaseBrain.shared.products {
+        for product in iapBrain.products {
             
-            if product.key == InAppPurchaseBrain.shared.iap_id {
+            if product.key == iapBrain.iap_id {
                 
                 if let currency = product.value.priceLocale.currencyCode {
                     

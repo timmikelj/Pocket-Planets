@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		22514BD2228F48A70021F374 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22514BD1228F48A70021F374 /* Double+Extensions.swift */; };
 		2294F821228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2294F820228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift */; };
-		2294F823228F027A00C4A1AA /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2294F822228F027A00C4A1AA /* LaunchViewController.swift */; };
+		82408ABB22995E0C0088A6B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F8A7202F4F0A0013B6FF /* Main.storyboard */; };
+		82408ABC22995E0C0088A6B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */; };
 		E06AB117228EC44D0001FD49 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AB116228EC44D0001FD49 /* ThemeManager.swift */; };
 		E06AB11B228ECAD70001FD49 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AB119228ECAD70001FD49 /* SettingsViewController.swift */; };
 		E06AB11C228ECAD70001FD49 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06AB11A228ECAD70001FD49 /* SettingsViewController.xib */; };
@@ -17,8 +18,6 @@
 		E098F8A2202F4F0A0013B6FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */; };
 		E098F8A4202F4F0A0013B6FF /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E098F8A3202F4F0A0013B6FF /* art.scnassets */; };
 		E098F8A6202F4F0A0013B6FF /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E098F8A5202F4F0A0013B6FF /* ARViewController.swift */; };
-		E098F8A9202F4F0A0013B6FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F8A7202F4F0A0013B6FF /* Main.storyboard */; };
-		E098F8AE202F4F0A0013B6FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */; };
 		E0AB3ECA2292DFE80045BE7A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0AB3EC92292DFE80045BE7A /* StoreKit.framework */; };
 		E0AB3ECC2292E4230045BE7A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB3ECB2292E4230045BE7A /* UIView+Extensions.swift */; };
 		E0AB3ECE2292F3390045BE7A /* CustomIAPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AB3ECD2292F3390045BE7A /* CustomIAPView.swift */; };
@@ -58,7 +57,6 @@
 /* Begin PBXFileReference section */
 		22514BD1228F48A70021F374 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		2294F820228EFEA800C4A1AA /* ActivityIndicator+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityIndicator+Extensions.swift"; sourceTree = "<group>"; };
-		2294F822228F027A00C4A1AA /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E06AB116228EC44D0001FD49 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E06AB119228ECAD70001FD49 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E06AB11A228ECAD70001FD49 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 		E098F8A8202F4F0A0013B6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E098F8AD202F4F0A0013B6FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E098F8AF202F4F0A0013B6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0AB3EC82292DFDD0045BE7A /* Pocket Planets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pocket Planets.entitlements"; sourceTree = "<group>"; };
 		E0AB3EC92292DFE80045BE7A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E0AB3ECB2292E4230045BE7A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		E0AB3ECD2292F3390045BE7A /* CustomIAPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIAPView.swift; sourceTree = "<group>"; };
@@ -182,11 +179,9 @@
 		E098F8A0202F4F0A0013B6FF /* Pocket Planets */ = {
 			isa = PBXGroup;
 			children = (
-				E0AB3EC82292DFDD0045BE7A /* Pocket Planets.entitlements */,
 				E098F8A1202F4F0A0013B6FF /* AppDelegate.swift */,
 				E098F8A7202F4F0A0013B6FF /* Main.storyboard */,
 				E098F8AC202F4F0A0013B6FF /* LaunchScreen.storyboard */,
-				2294F822228F027A00C4A1AA /* LaunchViewController.swift */,
 				E06AB11D228EE6BD0001FD49 /* Planet List */,
 				E06AB118228ECAAA0001FD49 /* Settings */,
 				E07F5A1E2042F6EB005BD0F2 /* AR Controller */,
@@ -288,7 +283,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Tim Mikelj";
 				TargetAttributes = {
 					E098F89D202F4F0A0013B6FF = {
@@ -329,12 +324,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82408ABB22995E0C0088A6B1 /* Main.storyboard in Resources */,
+				82408ABC22995E0C0088A6B1 /* LaunchScreen.storyboard in Resources */,
 				E098F8A4202F4F0A0013B6FF /* art.scnassets in Resources */,
-				E098F8AE202F4F0A0013B6FF /* LaunchScreen.storyboard in Resources */,
 				E0B2465F228D911400BF9CBD /* InAppPurchaseViewController.xib in Resources */,
 				E06AB11C228ECAD70001FD49 /* SettingsViewController.xib in Resources */,
 				E0B24664228D989B00BF9CBD /* IAPTableViewCell.xib in Resources */,
-				E098F8A9202F4F0A0013B6FF /* Main.storyboard in Resources */,
 				E0D5205A203C110800083B6B /* PlanetListTableViewCell.xib in Resources */,
 				E0B2465B228D8B5000BF9CBD /* Assets.xcassets in Resources */,
 				E0AB3ED52292F4D80045BE7A /* CustomIAPView.xib in Resources */,
@@ -361,7 +356,6 @@
 				E0AB3ECC2292E4230045BE7A /* UIView+Extensions.swift in Sources */,
 				E0B24659228D755B00BF9CBD /* UserDefaults.swift in Sources */,
 				E06AB117228EC44D0001FD49 /* ThemeManager.swift in Sources */,
-				2294F823228F027A00C4A1AA /* LaunchViewController.swift in Sources */,
 				E0B24666228D9A2000BF9CBD /* OfferList.swift in Sources */,
 				E0B2466D228D9D9F00BF9CBD /* Planet.swift in Sources */,
 				E0B2464F228D725600BF9CBD /* InAppPurchaseBrain.swift in Sources */,
@@ -410,6 +404,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -417,6 +412,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -467,6 +463,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -474,6 +471,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

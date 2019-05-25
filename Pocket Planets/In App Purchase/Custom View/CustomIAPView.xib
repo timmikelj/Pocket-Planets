@@ -37,8 +37,8 @@
                         <action selector="purchaseFullAccess:" destination="-1" eventType="touchUpInside" id="ODe-f1-bKu"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMG-U1-NtA">
-                    <rect key="frame" x="245" y="16" width="0.0" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fsf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMG-U1-NtA">
+                    <rect key="frame" x="233.5" y="16" width="23.5" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="y9S-79-0KN"/>
                     </constraints>

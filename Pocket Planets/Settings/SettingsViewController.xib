@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,17 +56,28 @@
                         <action selector="unitsSegmentedControl:" destination="-1" eventType="valueChanged" id="A7w-qB-hYN"/>
                     </connections>
                 </segmentedControl>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" © Tim Mikelj 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJG-Yp-4tx">
+                    <rect key="frame" x="115" y="544" width="90" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="dvF-lT-hsa"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0EG-Jv-plt" secondAttribute="trailing" constant="20" id="1JT-rH-1SW"/>
                 <constraint firstItem="9Zw-co-QDg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="3Ik-tV-FYw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rlV-mV-LYJ" secondAttribute="trailing" constant="20" id="84f-kz-JtO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="PJG-Yp-4tx" secondAttribute="bottom" constant="8" id="8LK-lX-u2v"/>
                 <constraint firstItem="9Zw-co-QDg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="HRS-c1-CdH"/>
                 <constraint firstItem="ZuH-d3-CDz" firstAttribute="top" secondItem="0EG-Jv-plt" secondAttribute="bottom" constant="30" id="Old-nu-Bpt"/>
                 <constraint firstItem="0EG-Jv-plt" firstAttribute="centerY" secondItem="9Zw-co-QDg" secondAttribute="centerY" id="icS-P0-jsQ"/>
                 <constraint firstItem="ZuH-d3-CDz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jOs-ZD-q6X"/>
                 <constraint firstItem="rlV-mV-LYJ" firstAttribute="centerY" secondItem="ZuH-d3-CDz" secondAttribute="centerY" id="qzi-DX-0af"/>
+                <constraint firstItem="PJG-Yp-4tx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="siy-rG-zo5"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
