@@ -71,20 +71,23 @@ extension InAppPurchaseBrain: SKProductsRequestDelegate, SKPaymentTransactionObs
                 switch trans.transactionState {
                     
                 case .purchased:
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                     UserDef.fullAccessPurchased()
                     showThankYouMessage()
+                    finishedLoadingPayment?(true)
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                     break
                     
                 case .failed:
+                    showFailedMessage(error: trans.error?.localizedDescription ?? "")
+                    finishedLoadingPayment?(true)
                     SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-                    showFailedMessage()
                     break
                     
                 case .restored:
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                     UserDef.fullAccessPurchased()
                     showRestoredMessage()
+                    finishedLoadingPayment?(true)
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
                     break
                     
                 default:
@@ -94,16 +97,14 @@ extension InAppPurchaseBrain: SKProductsRequestDelegate, SKPaymentTransactionObs
                 }
             }
         }
-        
-        finishedLoadingPayment?(true)
     }
     
     private func showThankYouMessage() {
         UIAlertController().showOneButtonAlert(title: "You Are Awesome!", buttonTitle: "Close", message: thankYouMessage)
     }
     
-    private func showFailedMessage() {
-        UIAlertController().showOneButtonAlert(title: "Error", buttonTitle: "Close", message: failedMessage)
+    private func showFailedMessage(error: String) {
+        UIAlertController().showOneButtonAlert(title: "Error", buttonTitle: "Close", message: error)
     }
     
     private func showRestoredMessage() {
