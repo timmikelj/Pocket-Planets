@@ -51,30 +51,11 @@ class PlanetListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         let selectedPlanet = PlanetData.planets[indexPath.row]
         let arVC = storyboard?.instantiateViewController(withIdentifier: ARViewController.identifier) as! ARViewController
         
-        if selectedPlanet.type == .free {
-            
-            arVC.planet = selectedPlanet
-            self.show(arVC, sender: nil)
-            
-        } else {
-            
-            if UserDef.isFullAccessPurchased() {
-                
-                arVC.planet = selectedPlanet
-                show(arVC, sender: nil)
-                
-            } else {
-                
-                let iapVC = InAppPurchaseViewController()
-                show(iapVC, sender: nil)
-            }
-            
-        }
-        
+        arVC.planet = selectedPlanet
+        self.show(arVC, sender: nil)
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

@@ -38,20 +38,9 @@ class SettingsViewController: UIViewController {
     
 
     @IBAction func darkModeSwitch(_ sender: UISwitch) {
-        
-        if UserDef.isFullAccessPurchased() {
-            
-            UserDef.darkModeApplied(sender.isOn)
-            themeManager.applyTheme(isDarkMode: sender.isOn)
-            loadUI()
-            
-        } else {
-            
-            let iapVC = InAppPurchaseViewController()
-            self.navigationController?.pushViewController(iapVC, animated: true)
-            
-        }
-        
+        UserDef.darkModeApplied(sender.isOn)
+        themeManager.applyTheme(isDarkMode: sender.isOn)
+        loadUI()
     }
     
     private func loadUI() {

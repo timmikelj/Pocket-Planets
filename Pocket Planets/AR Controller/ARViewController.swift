@@ -95,18 +95,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate, UINavigationControl
     }
     
     @IBAction func cameraButton(_ sender: UIButton) {
-        
-        if UserDef.isFullAccessPurchased() {
-
-            capturePhoto()
-
-        } else {
-
-            let iapVC = InAppPurchaseViewController()
-            self.navigationController?.pushViewController(iapVC, animated: true)
-
-        }
-
+        capturePhoto()
     }
     
     // MARK: - Image saving functions

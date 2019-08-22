@@ -23,14 +23,6 @@ final class UserDef {
         UserDefaults.standard.set(true, forKey: firstAppLaunchKey)
     }
     
-    static func isFullAccessPurchased() -> Bool {
-        return UserDefaults.standard.bool(forKey: appFullAccessKey)
-    }
-    
-    static func fullAccessPurchased() {
-        UserDefaults.standard.set(true, forKey: appFullAccessKey)
-    }
-    
     static func isDarkMode() -> Bool {
         return UserDefaults.standard.bool(forKey: darkModeKey)
     }
@@ -50,10 +42,10 @@ final class UserDef {
             switch currentUnitName {
                 
                 case UnitType.defaultUnit.rawValue:
-                    return units[0] // Chloe 🍺
+                    return units[0]
                 
                 case UnitType.metric.rawValue:
-                    return units[1] // Calian 😭
+                    return units[1]
                 
                 case UnitType.imperial.rawValue:
                     return units[2]

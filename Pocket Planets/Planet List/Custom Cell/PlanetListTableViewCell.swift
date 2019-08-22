@@ -27,65 +27,17 @@ class PlanetListTableViewCell: UITableViewCell {
         planetSize.text = "Diameter: \(planet.diameterInKm.convertToUserFriendlyDistance()) \(systemDistanceUnit())"
         planetDistanceFromSun.text = "Distance from Sun: \(planet.distanceFromSun.convertToUserFriendlyDistance()) million \(systemDistanceUnit())"
         
-        if !UserDef.isFullAccessPurchased() && planet.type == IAPOfferType.fullAccess {
-            loadRestrictionView()
-        } else {
-            removeRestrictionView()
-        }
-        
         setupUI()
     }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        loadRestrictionView()
         self.accessoryType = .disclosureIndicator
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-    
-    
-    func loadRestrictionView() {
-        
-        /// Restriction view config
-        restrictionView.backgroundColor = ppBackgroundColor
-        
-        if !self.contentView.subviews.contains(restrictionView) {
-        
-            restrictionView.frame = self.contentView.bounds
-            restrictionView.alpha = 0.9
-            
-            self.contentView.addSubview(restrictionView)
-            
-        } else {
-            restrictionView.isHidden = false
-        }
-        
-        /// Restriction label config
-        restrictionLabel.textColor = ppTextColor
-        
-        if !self.contentView.subviews.contains(restrictionLabel) {
-            
-            restrictionLabel = UILabel(frame: CGRect(x: 0, y: 0, width: restrictionView.layer.frame.width, height: 34))
-            restrictionLabel.text = "See With Full Access"
-            restrictionLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-            restrictionLabel.textAlignment = .center
-            restrictionLabel.center = restrictionView.center
-            
-            self.contentView.addSubview(restrictionLabel)
-            
-        } else {
-            restrictionLabel.isHidden = false
-        }
-        
-    }
-    
-    func removeRestrictionView() {
-        self.restrictionView.isHidden = true
-        self.restrictionLabel.isHidden = true
     }
     
     private func setupUI() {
